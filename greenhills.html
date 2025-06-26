@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Waterfalls - Santa Cruz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="placestogo.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="main-header">
+    <div class="logo">
+      <img style="width:15vw; height:10vh;" src="assets/fMarchLogo.png" alt="Logo 1">
+      <img src="assets/staCruzLogo.png" alt="Logo 2">
+    </div>
+    <nav class="navbar">
+      <a href="index.html">HOME</a>
+      <a href="churches.html">CHURCHES</a>
+      <a href="waterfalls.html">FALLS</a>
+      <a href="mangroveFarms.html">MANGROVE</a>
+      <a href="beaches.html">BEACH</a>
+      <a href="greenhills.html"><u>GREENHILLS</u></a>
+    </nav>
+  </header>
+
+  <section class="hero" style="background: url('assets/heroGreenHills.jpg') no-repeat center center / cover;">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 id="main-title">Green Hills </h1>
+        <p id="main-description" class="descriptions">
+          Located nine kilometers away from the national highway, Daligan Green-hills is every biking enthu-siast's dream. It boasts of a fully concreted road which connects the town to Sigay and Suyo. It is situated 284 kilometers above sea level which poses a chal-lenging slope for bikers and hikers alike, but all worth the effort because of the magnificent view from the top.
+        </p>
+        <button class="read-more"><a href="https://www.google.com/maps/dir/Sta.+Cruz+Public+Market,+3FJ4%2BHHR,+National+Highway,+Santa+Cruz,+Ilocos+Sur/Green+Hills+of+Sta.+Cruz,+Ilocos+Sur,+Santa+Cruz,+Ilocos+Sur/@17.0691898,120.4453351,13z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x338e1e8ae26c3c85:0x7dcdfc81a12c78db!2m2!1d120.4571499!2d17.0812035!1m5!1m1!1s0x338e1fe66b3a7407:0x99877affdcb69dc3!2m2!1d120.5170394!2d17.0577607!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D" style="text-decoration:none; font-family:oswald; font-size: medium; color:white;">View Map</a></button>
+      </div>
+      <img src="assets/heroGreenHills.jpg" alt="Nature Main" style="height:350px;" class="main-img" id="main-image" />
+    </div>
+  </section>
+
+  <!-- Image Gallery -->
+  <section class="gallery">
+    <div class="choices">
+
+      <div onclick="changeMainContent(0)">
+        <img src="assets/daliganGreenhills.jpg" alt="churches 1" />
+        <h1>Greenhills</h1>
+      </div>
+
+      <div onclick="changeMainContent(1)">
+        <img src="assets/g1.jpg" alt="churches 2" />
+        <h1>Of</h1>
+      </div>
+
+      <div onclick="changeMainContent(2)">
+        <img src="assets/g2.jpg" alt="Waterfall 3" />
+        <h1>Santa Cruz</h1>
+      </div>
+
+      <div onclick="changeMainContent(3)">
+        <img src="assets/g3.jpg" alt="Main Falls" />
+        <h1>Ilocos Sur</h1>
+      </div>
+
+    </div>
+  </section>
+
+
+  <script>
+    const titles = [
+      "Green Hills",
+      "Green Hills",
+      "Green Hills",
+      "Green Hills"
+    ];
+
+    const descriptions = [
+      "Located nine kilometers away from the national highway, Daligan Green-hills is every biking enthu-siast's dream. It boasts of a fully concreted road which connects the town to Sigay and Suyo. It is situated 284 kilometers above sea level which poses a chal-lenging slope for bikers and hikers alike, but all worth the effort because of the magnificent view from the top.",
+      "Located nine kilometers away from the national highway, Daligan Green-hills is every biking enthu-siast's dream. It boasts of a fully concreted road which connects the town to Sigay and Suyo. It is situated 284 kilometers above sea level which poses a chal-lenging slope for bikers and hikers alike, but all worth the effort because of the magnificent view from the top.",
+      "Located nine kilometers away from the national highway, Daligan Green-hills is every biking enthu-siast's dream. It boasts of a fully concreted road which connects the town to Sigay and Suyo. It is situated 284 kilometers above sea level which poses a chal-lenging slope for bikers and hikers alike, but all worth the effort because of the magnificent view from the top.",
+      "Located nine kilometers away from the national highway, Daligan Green-hills is every biking enthu-siast's dream. It boasts of a fully concreted road which connects the town to Sigay and Suyo. It is situated 284 kilometers above sea level which poses a chal-lenging slope for bikers and hikers alike, but all worth the effort because of the magnificent view from the top."
+    ];
+
+    const images = [
+      "assets/daliganGreenhills.jpg",
+      "assets/g1.jpg",
+      "assets/g2.jpg",
+      "assets/g3.jpg"
+    ];
+
+    function changeMainContent(index) {
+      document.getElementById('main-title').innerText = titles[index];
+      document.getElementById('main-description').innerText = descriptions[index];
+      document.getElementById('main-image').src = images[index];
+    }
+
+   
+  </script>
+
+</body>
+</html>

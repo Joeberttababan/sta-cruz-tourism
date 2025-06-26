@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beaches - Santa Cruz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="placestogo.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="main-header">
+    <div class="logo">
+      <img style="width:15vw; height:10vh;" src="assets/fMarchLogo.png" alt="Logo 1">
+      <img src="assets/staCruzLogo.png" alt="Logo 2">
+    </div>
+    <nav class="navbar">
+      <a href="index.html">HOME</a>
+      <a href="churches.html">CHURCHES</a>
+      <a href="waterfalls.html">FALLS</a>
+      <a href="mangroveFarms.html">MANGROVE</a>
+      <a href="beaches.html"><u>BEACH</u></a>
+      <a href="greenhills.html">GREENHILLS</a>
+    </nav>
+  </header>
+
+  <section class="hero" style="background: url('assets/herobeach.jpg') no-repeat center center / cover;">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 id="main-title">Beaches</h1>
+        <p id="main-description" class="descriptions">
+          Sta. Cruz has a rich trove of unspoiled and undeveloped beaches totaling to 11. These fine sand beaches located in barangays Pattiqui, Sevilla, Casilagan, Capariaan, Villa Gar-cia, Dili, Mantanas, Mambog, Pilar, Pinipin and Villa Hermo-sa cover a total area of 120 hectares and stretches 12 kilome ters along the shoreline. The roads leading to the beaches are all-weather type roads.
+        </p>
+        <button class="read-more">Google View</button>
+        <button class="view-more">View More</button>
+      </div>
+      <img src="assets/herobeach.jpg" alt="Nature Main" style="height:350px;" class="main-img" id="main-image" />
+    </div>
+  </section>
+
+  <!-- Image Gallery -->
+  <section class="gallery">
+    <div class="choices">
+
+      <div onclick="changeMainContent(0)">
+        <img src="assets/mBeach.jpg" alt="Waterfall 1" />
+        <h1>Mambog Beach</h1>
+      </div>
+
+      <div onclick="changeMainContent(1)">
+        <img src="assets/mantanasBeach.jpg" alt="Waterfall 2" />
+        <h1>Mantanas Beach</h1>
+      </div>
+
+      <div onclick="changeMainContent(2)">
+        <img src="assets/patiquiBeach.jpg" alt="Waterfall 3" />
+        <h1>Patiqui Beach</h1>
+      </div>
+
+      <div onclick="changeMainContent(3)">
+        <img src="assets/pilarBeach.jpg" alt="Main Falls" />
+        <h1>Pilar Beach</h1>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Responsive Modal -->
+<div id="popup-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div style="background: rgba(60, 122, 238, 0.8); border-radius:10px; padding: 10px;">
+    <h2 style="opacity:1 !important;">Churches</h2>
+    <p style="opacity:1 !important;">
+      Click Your Desired Destination For Directions and Map
+    </p>
+  </div>
+    <img src="">
+
+  <!---->
+
+  <div>
+    <div class="choices" id="choice" >
+  
+      <div style="width:17vh;" onclick="changeMainContent(0)">
+        <a href="https://www.google.com/maps/dir/Sta.+Cruz+Public+Market,+3FJ4%2BHHR,+National+Highway,+Santa+Cruz,+Ilocos+Sur/MAMBOG+PUBLIC+BEACH,+2CWX%2BF3P,+Santa+Cruz,+Ilocos+Sur/@17.0638899,120.4321053,14z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x338e1e8ae26c3c85:0x7dcdfc81a12c78db!2m2!1d120.4571499!2d17.0812035!1m5!1m1!1s0x338e1ffb32387fd9:0xb1ea53e71115d6dd!2m2!1d120.4477122!2d17.0462181!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D" target="_blank">
+          <img src="assets/mambogM.PNG" style="  width: 100%; height: 120px; object-fit: contain; border-bottom: 1px solid #ddd;" alt="churches 2" />
+          <h1>Mambog Beach</h1>
+        </a>
+      </div>
+      <div style="width:17vh;" onclick="changeMainContent(1)">
+        <a href="https://www.google.com/maps/dir/Sta.+Cruz+Public+Market,+3FJ4%2BHHR,+National+Highway,+Santa+Cruz,+Ilocos+Sur/MANTANAS+BEACH+FRONT,+2CQX%2B7XG,+Santa+Cruz,+Ilocos+Sur/@17.0420659,120.4529668,15z/data=!4m13!4m12!1m5!1m1!1s0x338e1e8ae26c3c85:0x7dcdfc81a12c78db!2m2!1d120.4571499!2d17.0812035!1m5!1m1!1s0x338e1f003863dd75:0x5454ee950145d7fc!2m2!1d120.449956!2d17.0382213!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D" target="_blank">
+          <img src="assets/mantanasM.PNG" style="  width: 100%; height: 120px; object-fit: contain; border-bottom: 1px solid #ddd;" alt="churches 2" />
+          <h1>Mantanas Beach</h1>
+        </a>
+      </div>
+      <div style="width:17vh;" onclick="changeMainContent(2)">
+        <a href="https://www.google.com/maps/dir/Sta.+Cruz+Public+Market,+3FJ4%2BHHR,+National+Highway,+Santa+Cruz,+Ilocos+Sur/Pattiqui,+Santa+Cruz,+Ilocos+Sur/@17.0030249,120.3807047,12z/data=!4m13!4m12!1m5!1m1!1s0x338e1e8ae26c3c85:0x7dcdfc81a12c78db!2m2!1d120.4571499!2d17.0812035!1m5!1m1!1s0x3391e17637d7381b:0x490f5c7717e2ee8b!2m2!1d120.4516055!2d16.9933001!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D" target="_blank">
+          <img src="assets/ptqMap.PNG" style="  width: 100%; height: 120px; object-fit: contain; border-bottom: 1px solid #ddd;" alt="churches 3" />
+          <h1>Patiqui Beach</h1>
+        </a>
+      </div>
+    
+      <div style="width:17vh;" onclick="changeMainContent(3)">
+        <a href="https://www.google.com/maps/dir/Sta.+Cruz+Public+Market,+3FJ4%2BHHR,+National+Highway,+Santa+Cruz,+Ilocos+Sur/Pilar+Beach,+3CFQ%2BXHJ,+Santa+Cruz,+Ilocos+Sur/@17.0792124,120.4381208,15z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x338e1e8ae26c3c85:0x7dcdfc81a12c78db!2m2!1d120.4571499!2d17.0812035!1m5!1m1!1s0x338e1e792b03967d:0x6b6ebe17e6f37cc0!2m2!1d120.4389283!2d17.0748594!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D" target="_blank">
+          <img src="assets/pilarM.PNG" style="  width: 100%; height: 120px; object-fit: contain; border-bottom: 1px solid #ddd;" alt="churches 4" />
+          <h1>Pilar <br>Beach</h1>
+        </a>
+      </div>
+    
+    </div>
+    
+  </div> 
+  <!----> 
+    </div>
+  </div>
+
+  <div id="viewmore-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-viewmore">&times;</span>
+      <h2 >Learn More About The Mangroves Of Sta. Cruz</h2>
+      <p>
+        Beaches Around The Municipality of Sta. Cruz Ilocos Sur are all covered with the magnificent black colored sands. Some visitors from the urban areas enjoy swimming by the seaside, the gusts of the wind in their skin, feels the embrace of the west Philippine sea into their skins.
+      </p>
+      <ul>
+        <li><strong>Our Lady Of Guadalupe</strong>: Replica of Mexico’s basilica, with stunning stained glass and retablo.</li>
+        <li><strong>Our Lady Of Fatima</strong>: A peaceful site, deeply rooted in local devotion.</li>
+        <li><strong>Immaculate Conception Church</strong>: A historical monument constructed during the Spanish era.</li>
+        <li><strong>Our Lady Of Mt. Carmel</strong>: Known for its charm and regular pilgrimages.</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Script -->
+  <script>
+    const titles = [
+      "Mambog Beach",
+      "Mantanas Beach",
+      "Patiqui Beach",
+      "Pilar Beach"
+    ];
+
+    const descriptions = [
+      "Mambog is one of the finest beaches in Santa Cruz.",
+      "Mantanas Beach offers a tranquil escape.",
+      "Patiqui’s coastline is perfect for family outings.",
+      "Pilar Beach is a favorite for sunsets and sandbars."
+    ];
+
+    const images = [
+      "assets/mBeach.jpg",
+      "assets/mantanasBeach.jpg",
+      "assets/patiquiBeach.jpg",
+      "assets/pilarBeach.jpg"
+    ];
+
+    function changeMainContent(index) {
+      document.getElementById('main-title').innerText = titles[index];
+      document.getElementById('main-description').innerText = descriptions[index];
+      document.getElementById('main-image').src = images[index];
+    }
+
+    const modal = document.getElementById("popup-modal");
+    const openBtn = document.querySelector(".read-more");
+    const closeBtn = document.querySelector(".close-btn");
+
+    openBtn.addEventListener("click", () => {
+      modal.style.display = "block";
+    });
+
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+
+      // View More Modal logic
+  const viewMoreModal = document.getElementById("viewmore-modal");
+  const viewMoreBtn = document.querySelector(".view-more");
+  const closeViewMore = document.querySelector(".close-viewmore");
+
+  viewMoreBtn.addEventListener("click", () => {
+    viewMoreModal.style.display = "block";
+  });
+
+  closeViewMore.addEventListener("click", () => {
+    viewMoreModal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === viewMoreModal) {
+      viewMoreModal.style.display = "none";
+    }
+  });
+  </script>
+
+<script src="script.js"></script>
+</body>
+</html>

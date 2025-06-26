@@ -1,0 +1,321 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* General Containers */
+.backdrop {
+  width: fit-content;
+  height: fit-content;
+  color: rgb(101, 89, 170);
+  background-color: white;
+  border-radius: 1vh;
+  padding: 5vh;
+}
+
+/* Header */
+.main-header {   
+  display: flex;   
+  justify-content: space-between;   
+  align-items: center;   
+  background: #230f7a;   
+  color: white;   padding: 10px 40px; 
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Make sure it's above everything else */
+  background: #1e33ad; /* Re-apply background in case it overlaps */
+}  
+   
+ .logo {
+  display: flex;
+  align-items: center; /* vertically center the items */
+}
+
+.logo img {
+  width:50px; 
+  height:50px;
+  margin-right: 10px;
+}
+
+/* Navbar */
+
+.navbar a {
+  opacity:1;
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #f2b705;
+}
+
+/* Hero Section */
+.hero {
+  background: url('assets/mhall.jpg') no-repeat center center / cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 6vw;
+  position: relative;
+  color: white;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+
+}
+
+
+.hero-text {
+  position: relative;
+  color:rgb(255, 255, 255);
+  z-index: 1;
+  max-width: 90%;
+  padding: 1rem;
+}
+
+.hero-text h1,
+h1 {
+  font-family: "Protest Strike", sans-serif;
+  font-size: 6vw;
+  font-weight: bold;
+  margin-bottom: 1vh;
+  line-height: 1.1;
+  color: #ffd900;
+}
+
+.hero-text p,
+.hero-text h2 {
+  font-family: century 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  margin-top: 0.5vh;
+}
+
+.hero-text p {
+  font-family: century 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  margin-top: 0.5vh;
+}
+/* Right theme text */
+#theme {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  text-align: right;
+}
+
+/* Explore bar */
+.exploreDiv {
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  width: auto;
+  background-color: #1a1a1a;
+}
+
+/* Places Section */
+.places-wrapper {
+  background: url('assets/exploreNow.jpg') no-repeat center center / cover;
+  height: 110vh;
+  padding: 40px 20px;
+}
+
+/* Scrollable Slider Container */
+.slider-container {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+}
+
+/* Places Slider Styles */
+.places-slider {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: max-content;
+  margin-top: 70px;
+  padding-bottom: 20px;
+  position: relative;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar but keep scroll functionality */
+.places-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.places-slider {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* Individual Cards (4 visible on desktop) */
+.place-card {
+  flex: 0 0 auto;
+  width: 22vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: white;
+  color: #333;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, width 0.3s ease;
+  position: relative;
+}
+
+.place-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.place-card h3 {
+  background-color: #0e2e4e;
+  color: white;
+  padding: 5px 0;
+}
+
+/* Responsive Caption Text */
+.place-card p {
+  font-size: 0.9vw;
+  padding: 5px 8px;
+  font-size:15px;
+  margin: 0;
+  color: #000000;
+  line-height: 1.3;
+}
+
+/* Active card on click */
+.place-card.active {
+  width: 300px;
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+/* On hover */
+.place-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+.footer {
+  background-color: #1e2a38;
+  color: #f1f1f1;
+  padding: 40px 20px 20px;
+  font-family: 'Oswald', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-section {
+  flex: 1 1 300px;
+}
+
+.footer-section h2 {
+  font-size: 1.5rem;
+  color: #68BBE3;
+  margin-bottom: 10px;
+}
+
+.footer-section p {
+  margin: 8px 0;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #444;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-section {
+    width: 100%;
+  }
+}
+
+
+strong{
+  font-size:larger;
+}
+
+/* Optional hidden cards if needed */
+#imaginary-cards {
+  opacity: 0;
+}
+
+/* Tablet View (2 cards visible) */
+@media (max-width: 768px) {
+  .place-card {
+    width: 45vw;
+  }
+
+  .place-card img {
+    height: 160px;
+  }
+
+  .place-card p {
+    font-size: 13px;
+  }
+}
+
+/* Mobile View (1.5–2 cards visible) */
+@media (max-width: 480px) {
+  .places-slider {
+    justify-content: flex-start;
+  }
+
+  .place-card {
+    width: 60vw;
+  }
+
+  .place-card img {
+    height: 150px;
+  }
+
+  .place-card p {
+    font-size: 12px;
+  }
+}
+
+/*html links*/
+
+.places{
+  text-decoration:none;
+  color:whitesmoke;
+}

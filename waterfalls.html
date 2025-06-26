@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Waterfalls - Santa Cruz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="placestogo.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="main-header">
+    <div class="logo">
+      <img style="width:15vw; height:10vh;" src="assets/fMarchLogo.png" alt="Logo 1">
+      <img src="assets/staCruzLogo.png" alt="Logo 2">
+    </div>
+    <nav class="navbar">
+      <a href="index.html">HOME</a>
+      <a href="churches.html">CHURCHES</a>
+      <a href="waterfalls.html"><u>FALLS</u></a>
+      <a href="mangroveFarms.html">MANGROVE</a>
+      <a href="beaches.html">BEACH</a>
+      <a href="greenhills.html">GREENHILLS</a>
+    </nav>
+  </header>
+
+  <section class="hero" style="background: url('assets/heroFalls.jpg') no-repeat center center / cover;">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 id="main-title">Kagutungan Falls</h1>
+        <p id="main-description" class="descriptions">
+          The second southernmost town of the province of Laguna and in the Philippines, Santa Cruz has a diverse, beautiful past. It is known as the strong Spanish colonial practice...
+        </p>
+        <button class="read-more">Google View</button>
+        <button class="view-more">View More</button>
+      </div>
+      <img src="assets/falls.jpg" alt="Nature Main" style="height:350px;" class="main-img" id="main-image" />
+    </div>
+  </section>
+
+  <!-- Image Gallery -->
+  <section class="gallery">
+    <div class="choices">
+
+      <div onclick="changeMainContent(0)">
+        <img src="assets/rakrakFalls.jpg" alt="Waterfall 1" />
+        <h1>Rakrak Falls</h1>
+      </div>
+
+      <div onclick="changeMainContent(1)">
+        <img src="assets/lipitFalls.jpg" alt="Waterfall 2" />
+        <h1>Lipit Falls</h1>
+      </div>
+
+      <div onclick="changeMainContent(2)">
+        <img src="assets/dalumpinasFalls.jpg" alt="Waterfall 3" />
+        <h1>Dalumpinas Falls</h1>
+      </div>
+
+      <div onclick="changeMainContent(3)">
+        <img src="assets/falls.jpg" alt="Main Falls" />
+        <h1>Kagutungan Falls</h1>
+      </div>
+
+    </div>
+  </section>
+
+<!-- Responsive Modal -->
+<div id="popup-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div style="background: rgba(60, 122, 238, 0.8); border-radius:10px; padding: 10px;">
+    <h2 style="opacity:1 !important;">Churches</h2>
+    <p style="opacity:1 !important;">
+      Click Your Desired Destination For Directions and Map
+    </p>
+  </div>
+    <img src="">
+
+<!---->
+<div>
+  <div class="choices" id="choice" >
+
+    <div style="width:17vh;" onclick="changeMainContent(0)">
+      <a href="https://www.google.com/maps/dir/Sta.+Cruz+Public+Market,+3FJ4%2BHHR,+National+Highway,+Santa+Cruz,+Ilocos+Sur/Kagutungan+Falls,+3G52%2BMQH,+Santa+Cruz,+Ilocos+Sur/@17.0691519,120.4591178,14z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x338e1e8ae26c3c85:0x7dcdfc81a12c78db!2m2!1d120.4571499!2d17.0812035!1m5!1m1!1s0x338e1f0fac3eb261:0x624d6fbcb52a1d2e!2m2!1d120.5034039!2d17.0591171!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D" target="_blank">
+        <img src="assets/rakrakFalls.jpg" style="  width: 100%; height: 120px; object-fit: contain; border-bottom: 1px solid #ddd;" alt="churches 2" />
+        <h1>RakRak Falls</h1>
+      </a>
+    </div>
+    <div style="width:17vh;" onclick="changeMainContent(1)">
+      <a href="https://www.google.com/maps/dir/Sta.+Cruz+Public+Market,+3FJ4%2BHHR,+National+Highway,+Santa+Cruz,+Ilocos+Sur/Dalumpinas+Falls,+2FCV%2BR8P,+Santa+Cruz,+Ilocos+Sur/@17.0194843,120.3977199,12z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x338e1e8ae26c3c85:0x7dcdfc81a12c78db!2m2!1d120.4571499!2d17.0812035!1m5!1m1!1s0x3391e142d759c90f:0x590fe3ade1adf5bd!2m2!1d120.4933395!2d17.0220863!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D" target="_blank">
+        <img src="assets/lipitFalls.jpg" style="  width: 100%; height: 120px; object-fit: contain; border-bottom: 1px solid #ddd;" alt="churches 2" />
+        <h1>Lipit Falls</h1>
+      </a>
+    </div>
+    <div style="width:17vh;" onclick="changeMainContent(2)">
+      <a href="https://www.google.com/maps/dir/Sta.+Cruz+Public+Market,+3FJ4%2BHHR,+National+Highway,+Santa+Cruz,+Ilocos+Sur/Dalumpinas+Falls,+2FCV%2BR8P,+Santa+Cruz,+Ilocos+Sur/@17.0194843,120.3977199,12z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x338e1e8ae26c3c85:0x7dcdfc81a12c78db!2m2!1d120.4571499!2d17.0812035!1m5!1m1!1s0x3391e142d759c90f:0x590fe3ade1adf5bd!2m2!1d120.4933395!2d17.0220863!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D" target="_blank">
+        <img src="assets/dalumpinasFalls.jpg" style="  width: 100%; height: 120px; object-fit: contain; border-bottom: 1px solid #ddd;" alt="churches 3" />
+        <h1>Dalumpinas falls</h1>
+      </a>
+    </div>
+  
+    <div style="width:17vh;" onclick="changeMainContent(3)">
+      <a href="https://www.google.com/maps/dir/Sta.+Cruz+Public+Market,+3FJ4%2BHHR,+National+Highway,+Santa+Cruz,+Ilocos+Sur/Kagutungan+Falls,+3G52%2BMQH,+Santa+Cruz,+Ilocos+Sur/@17.0691519,120.4591178,14z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x338e1e8ae26c3c85:0x7dcdfc81a12c78db!2m2!1d120.4571499!2d17.0812035!1m5!1m1!1s0x338e1f0fac3eb261:0x624d6fbcb52a1d2e!2m2!1d120.5034039!2d17.0591171!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D" target="_blank">
+        <img src="assets/falls.jpg" style="  width: 100%; height: 120px; object-fit: contain; border-bottom: 1px solid #ddd;" alt="churches 4" />
+        <h1>Kagutungan Falls</h1>
+      </a>
+    </div>
+  
+  </div>
+  
+</div> 
+<!----> 
+  </div>
+</div>
+
+<!--Modal for View More-->
+<div id="viewmore-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-viewmore">&times;</span>
+    <h2>More About Churches</h2>
+    <p>
+      Churches in Santa Cruz are not only spiritual sanctuaries but also cultural landmarks built with rich history and heritage.
+    </p>
+    <ul>
+      <li><strong>Our Lady Of Guadalupe</strong>: Replica of Mexico’s basilica, with stunning stained glass and retablo.</li>
+      <li><strong>Our Lady Of Fatima</strong>: A peaceful site, deeply rooted in local devotion.</li>
+      <li><strong>Immaculate Conception Church</strong>: A historical monument constructed during the Spanish era.</li>
+      <li><strong>Our Lady Of Mt. Carmel</strong>: Known for its charm and regular pilgrimages.</li>
+    </ul>
+  </div>
+</div>
+
+
+  <script>
+    const titles = [
+      "Rakrak Falls",
+      "Lipit Falls",
+      "Dalumpinas Falls",
+      "Kagutungan Falls"
+    ];
+
+    const descriptions = [
+      "Rakrak Falls is a hidden paradise in the heart of Santa Cruz, surrounded by dense foliage and echoing with nature’s symphony.",
+      "Lipit Falls offers a serene spot for quiet reflection, with gentle cascades and clear waters perfect for cooling off.",
+      "Dalumpinas Falls is a narrow yet powerful stream cutting through a rocky forest trail, popular among local hikers.",
+      "The second southernmost town of the province of Laguna and in the Philippines, Santa Cruz has a diverse, beautiful past. It is known as the strong Spanish colonial practice..."
+    ];
+
+    const images = [
+      "assets/rakrakFalls.jpg",
+      "assets/lipitFalls.jpg",
+      "assets/dalumpinasFalls.jpg",
+      "assets/falls.jpg"
+    ];
+
+    function changeMainContent(index) {
+      document.getElementById('main-title').innerText = titles[index];
+      document.getElementById('main-description').innerText = descriptions[index];
+      document.getElementById('main-image').src = images[index];
+    }
+
+     // Modal logic
+     const modal = document.getElementById("popup-modal");
+    const openBtn = document.querySelector(".read-more");
+    const closeBtn = document.querySelector(".close-btn");
+    
+    openBtn.addEventListener("click", () => {
+      modal.style.display = "block";
+    });
+    
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+    
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+
+  // View More Modal logic
+  const viewMoreModal = document.getElementById("viewmore-modal");
+  const viewMoreBtn = document.querySelector(".view-more");
+  const closeViewMore = document.querySelector(".close-viewmore");
+
+  viewMoreBtn.addEventListener("click", () => {
+    viewMoreModal.style.display = "block";
+  });
+
+  closeViewMore.addEventListener("click", () => {
+    viewMoreModal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === viewMoreModal) {
+      viewMoreModal.style.display = "none";
+    }
+  });
+
+  </script>
+
+</body>
+</html>

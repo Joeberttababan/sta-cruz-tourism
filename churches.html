@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Churches - Santa Cruz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="placestogo.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="main-header">
+    <div class="logo">
+      <img style="width:15vw; height:10vh;" src="assets/fMarchLogo.png" alt="Logo 1">
+      <img src="assets/staCruzLogo.png" alt="Logo 2">
+    </div>
+    <nav class="navbar">
+      <a href="index.html">HOME</a>
+      <a href="churches.html"><u>CHURCHES</u></a>
+      <a href="waterfalls.html">FALLS</a>
+      <a href="mangroveFarms.html">MANGROVE</a>
+      <a href="beaches.html">BEACH</a>
+      <a href="greenhills.html">GREENHILLS</a>
+    </nav>
+  </header>
+
+  <section class="hero" style="background: url('assets/churchHero.jpg') no-repeat center center / cover;">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 id="main-title">Churches</h1>
+        <p id="main-description" class="descriptions">
+          The second southernmost town of the province of Laguna and in the Philippines, Santa Cruz has a diverse, beautiful past. It is known as the strong Spanish colonial practice...
+        </p>
+        <button class="read-more">Google View</button>
+        <button class="view-more">View More</button>
+      </div>
+      <img src="assets/churchHero.jpg" alt="Nature Main" style="height:350px;" class="main-img" id="main-image" />
+    </div>
+  </section>
+
+
+  <!-- Image Gallery -->
+  <section class="gallery">
+    <div class="choices">
+
+      <div onclick="changeMainContent(0)">
+        <img src="assets/olgChurch.jpg" alt="churches 1" />
+        <h1>Our Lady Of Guadalupe</h1>
+      </div>
+
+      <div onclick="changeMainContent(1)">
+        <img src="assets/ourladyofFatima.jpg" alt="churches 2" />
+        <h1>Our Lady Of Fatima</h1>
+      </div>
+
+      <div onclick="changeMainContent(2)">
+        <img src="assets/ourLadyofImmaculateConception.jpg" alt="churches 3" />
+        <h1>Our Lady Of Immaculate Conception</h1>
+      </div>
+
+      <div onclick="changeMainContent(3)">
+        <img src="assets/ourLadyofMtCarmel.jpg" alt="churches 4" />
+        <h1>Our Lady Of Mt. Carmel</h1>
+      </div>
+
+    </div>
+  </section>
+
+<!-- Responsive Modal -->
+<div id="popup-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div style="background: rgba(60, 122, 238, 0.8); border-radius:10px; padding: 10px;">
+    <h2 style="opacity:1 !important;">Churches</h2>
+    <p style="opacity:1 !important;">
+      Click Your Desired Destination For Directions and Map
+    </p>
+  </div>
+    <img src="">
+
+<!---->
+<div>
+  <div class="choices" id="choice" >
+
+    <div style="width:17vh;" onclick="changeMainContent(0)">
+      <a href="https://www.google.com/maps/dir/Sta.+Cruz+Public+Market,+3FJ4%2BHHR,+National+Highway,+Santa+Cruz,+Ilocos+Sur/Our+Lady+of+Guadalupe+Church,+Santa+Cruz,+Ilocos+Sur/@17.0404235,120.3850339,12z/data=!4m13!4m12!1m5!1m1!1s0x338e1e8ae26c3c85:0x7dcdfc81a12c78db!2m2!1d120.4571499!2d17.0812035!1m5!1m1!1s0x3391e13019999f2f:0xbb9a791082f0f8a0!2m2!1d120.4554378!2d17.0085644!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D" target="_blank">
+        <img src="assets/OLGP.PNG" style="  width: 100%; height: 120px; object-fit: contain; border-bottom: 1px solid #ddd;" alt="churches 2" />
+        <h1>Our Lady Of Guadalupe</h1>
+      </a>
+    </div>
+    <div style="width:17vh;" onclick="changeMainContent(1)">
+      <a href="https://www.google.com/maps/dir/Sta.+Cruz+Public+Market,+3FJ4%2BHHR,+National+Highway,+Santa+Cruz,+Ilocos+Sur/Our+Lady+of+Fatima+Church,+Bacsayan,+Sta.+Cruz,+Ilocos+Sur,+3F8H%2BCV3,+Gov.+Titong+Singson+Rd,+Santa+Cruz,+Ilocos+Sur/@17.0737478,120.4575562,15z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x338e1e8ae26c3c85:0x7dcdfc81a12c78db!2m2!1d120.4571499!2d17.0812035!1m5!1m1!1s0x338e1f005f5a06a7:0xf1551a02624f4223!2m2!1d120.4796809!2d17.0660246!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D" target="_blank">
+        <img src="assets/OLFC.PNG" style="  width: 100%; height: 120px; object-fit: contain; border-bottom: 1px solid #ddd;" alt="churches 2" />
+        <h1>Our Lady Of Fatima</h1>
+      </a>
+    </div>
+    <div style="width:17vh;" onclick="changeMainContent(2)">
+      <a href="https://www.google.com/maps/dir/Sta.+Cruz+Public+Market,+3FJ4%2BHHR,+National+Highway,+Santa+Cruz,+Ilocos+Sur/Immaculate+Conception+Parish+Church+-+Poblacion+Este,+Santa+Cruz,+Ilocos+Sur+(Archdiocese+of+Nueva+Segovia),+3FM2%2BRF6,+Santa+Cruz,+Ilocos+Sur/@17.0828908,120.449417,16z/data=!4m13!4m12!1m5!1m1!1s0x338e1e8ae26c3c85:0x7dcdfc81a12c78db!2m2!1d120.4571499!2d17.0812035!1m5!1m1!1s0x338e1e8ecb3ca74f:0x4fa5fcf816b8f04d!2m2!1d120.4511542!2d17.0845434!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D" target="_blank">
+        <img src="assets/ICPC.PNG" style="  width: 100%; height: 120px; object-fit: contain; border-bottom: 1px solid #ddd;" alt="churches 3" />
+        <h1>Our Lady Of Immaculate Conception</h1>
+      </a>
+    </div>
+  
+    <div style="width:17vh;" onclick="changeMainContent(3)">
+      <a href="https://www.google.com/maps/place/Mt.+Carmel+Church,+Capariaan,+Sta.+Cruz,+Ilocos+Sur/@17.0212769,120.4535142,18z/data=!4m28!1m21!4m20!1m11!1m2!1s0x338e1e8ae26c3c85:0x7dcdfc81a12c78db!2sSta.+Cruz+Public+Market,+3FJ4%2BHHR,+National+Highway,+Santa+Cruz,+Ilocos+Sur!2m2!1d120.4571499!2d17.0812035!3m4!1m2!1d120.4546629!2d17.0239055!3s0x3391e1e8952deaff:0x522db706d666d194!1m6!1m2!1s0x3391e1c51efcb6e9:0x8d884cb107b9ffb1!2sCapariaan,+Santa+Cruz,+Ilocos+Sur!2m2!1d120.4660059!2d17.0226173!3e9!3m5!1s0x3391e1001ec80499:0xd5596314d0638dc7!8m2!3d17.0240594!4d120.454807!16s%2Fg%2F11x8yngvqd!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D" target="_blank">
+        <img src="assets/OLMC.PNG" style="  width: 100%; height: 120px; object-fit: contain; border-bottom: 1px solid #ddd;" alt="churches 4" />
+        <h1>Our Lady Of Mt. Carmel</h1>
+      </a>
+    </div>
+  
+  </div>
+  
+</div> 
+<!----> 
+  </div>
+</div>
+
+<!--Modal for View More-->
+<div id="viewmore-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-viewmore">&times;</span>
+    <h2>More About Churches</h2>
+    <p>
+      Churches in Santa Cruz are not only spiritual sanctuaries but also cultural landmarks built with rich history and heritage.
+    </p>
+    <ul>
+      <li><strong>Our Lady Of Guadalupe</strong>: Replica of Mexico’s basilica, with stunning stained glass and retablo.</li>
+      <li><strong>Our Lady Of Fatima</strong>: A peaceful site, deeply rooted in local devotion.</li>
+      <li><strong>Immaculate Conception Church</strong>: A historical monument constructed during the Spanish era.</li>
+      <li><strong>Our Lady Of Mt. Carmel</strong>: Known for its charm and regular pilgrimages.</li>
+    </ul>
+  </div>
+</div>
+
+  <script>
+    const titles = [
+      "Our Lady Of Guadalupe",
+      "Our Lady Of Fatima",
+      "Our Lady Of Immaculate Conception",
+      "Our Lady Of Mt. Carmel"
+    ];
+
+    const descriptions = [
+      "Built after the image of the Basilica of Our Lady of Guadalupe in Mexico City, the newly constructed church of the Our Lady Of Guadalupe in Sevilla, Sta. Cruz Ilocos Sur is an architectural marvel. It has a crown which hosts an image of angels. The grand altarpiece or retablo is also inspired by the altarpiece of the Basilica in Mexico City. The ovenbaked, stained glass window feature the k20 mysteries of the Holy Rosary.",
+      "Lipit Falls offers a serene spot for quiet reflection, with gentle cascades and clear waters perfect for cooling off.",
+      "Tourists, often local, who wish to engage in a historical and religious sojourn often stop by the Our Lady of the Immaculate Conception Church located in Poblacion Sur, Sta. Cruz, Ilocos Sur.  Built between the 1700s and 1800s, it is said that the church was constructed through forced labor. Men and women alike hauled slabs of stones in order to shape the structure.",
+      "The second southernmost town of the province of Laguna and in the Philippines, Santa Cruz has a diverse, beautiful past. It is known as the strong Spanish colonial practice..."
+    ];
+
+    const images = [
+      "assets/olgChurch.jpg",
+      "assets/ourladyofFatima.jpg",
+      "assets/ourLadyofImmaculateConception.jpg",
+      "assets/ourLadyofMtCarmel.jpg"
+    ];
+
+    function changeMainContent(index) {
+      document.getElementById('main-title').innerText = titles[index];
+      document.getElementById('main-description').innerText = descriptions[index];
+      document.getElementById('main-image').src = images[index];
+    }
+
+    // Modal logic
+    const modal = document.getElementById("popup-modal");
+    const openBtn = document.querySelector(".read-more");
+    const closeBtn = document.querySelector(".close-btn");
+    
+    openBtn.addEventListener("click", () => {
+      modal.style.display = "block";
+    });
+    
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+    
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+
+  // View More Modal logic
+  const viewMoreModal = document.getElementById("viewmore-modal");
+  const viewMoreBtn = document.querySelector(".view-more");
+  const closeViewMore = document.querySelector(".close-viewmore");
+
+  viewMoreBtn.addEventListener("click", () => {
+    viewMoreModal.style.display = "block";
+  });
+
+  closeViewMore.addEventListener("click", () => {
+    viewMoreModal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === viewMoreModal) {
+      viewMoreModal.style.display = "none";
+    }
+  });
+
+    
+  </script>
+  <script src="script.js"></script>
+
+</body>
+</html>
