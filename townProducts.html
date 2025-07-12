@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Town Products - Santa Cruz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/placestogo.css">
+  <style>
+    .highlight-section {
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(to right, #1e33ad, #2196f3);
+      color: white;
+    }
+    .highlight-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .highlight-section p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    @media(max-width: 400px){
+      .highlight-section h2{
+        font-size:1rem;
+      }
+      .highlight-section p{
+        font-size:.9rem;
+      }
+    }
+    @media(max-width: 300px){
+      .highlight-section h2{
+        font-size:1.2rem;
+      }
+      .highlight-section p{
+        font-size:.5rem;
+      }
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 2rem;
+      background: #f0f8ff;
+    }
+    .product-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .product-card:hover {
+      transform: translateY(-10px);
+    }
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .product-info {
+      padding: 1rem;
+    }
+    .product-info h3 {
+      color: #1e33ad;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .product-info p {
+      font-size: 0.95rem;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="main-header" style="background-image:url('assets/mainHeaderBg1.png'); background-size:cover;">
+  <div class="logo">
+    <img class="logo1" style="width:8vw; height:10vh;" src="assets/fMarchLogo.png" alt="Logo 1">
+    <img class="logo2" src="assets/staCruzLogo.png" alt="Logo 2">
+  </div>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+  
+    <div class="dropdown">
+      <a href="#">Attractions</a>
+      <div class="dropdown-content">
+  
+        <!-- Nested Dropdown: Potential -->
+        <div class="dropdown-sub">
+          <a href="#">Potential Tourist Spots ▸</a>
+          <div class="dropdown-sub-content">
+            <a href="beaches.html">Beaches</a>
+            <a href="greenhills.html">Greenhills</a>
+            <a href="mangroveFarms.html">Mangrove Farms</a>
+            <a href="scmunicipalHall.html">Municipal Hall</a>
+          </div>
+        </div>
+  
+        <!-- Nested Dropdown: Emerging -->
+        <div class="dropdown-sub">
+          <a href="#">Emerging Tourist Spots ▸</a>
+          <div class="dropdown-sub-content">
+            <a href="churches.html">Churches</a>
+            <a href="waterfalls.html">Waterfalls</a>
+            <a style="padding-bottom:100px;"  href="historicalPlace.html">Historical Tourism</a>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+    <a href="townProducts.html"><u>Town Products</u></a>
+    <a href="hotelAndResorts.html">Hotel & Resorts</a>
+    <a href="restaurants.html">Restaurants</a>
+    <a href="tourismCircuit.html">Daytrips</a>
+    <a href="index.html#about-footer">About Us</a>
+  </nav>
+  
+</header>
+
+<section class="highlight-section">
+  <h2>Discover the Heart of Santa Cruz Through Its Products</h2>
+  <p>Our town is proud of its rich craftsmanship and culinary heritage. From artisan baskets to delicious delicacies, support local by exploring our best offerings.</p>
+</section>
+
+<section class="product-grid">
+  <div class="product-card">
+    <img src="assets/product1.jpg" alt="Handwoven Bag">
+    <div class="product-info">
+      <h3>Straight from Farm Vegetables</h3>
+      <p>Freshly plucked vegetables, taste better when added to every dishes. Thanks to our local farmer's in growinf these crops.</p>
+    </div>
+  </div>
+  <div class="product-card">
+    <img src="assets/product2.jpg" alt="Native Delicacies">
+    <div class="product-info">
+      <h3>Fresh Bagoong</h3>
+      <p>Add flovor to the traditional dinengdeng of the Ilocano's. Try Now!</p>
+    </div>
+  </div>
+  <div class="product-card">
+    <img src="assets/product3.jpg" alt="Ceramic Jars">
+    <div class="product-info">
+      <h3>Banana Chips</h3>
+      <p>Beautiful hand-glazed jars ideal for home decor or practical use.</p>
+    </div>
+  </div>
+  <div class="product-card">
+    <img src="assets/product4.jpg" alt="Bamboo Crafts">
+    <div class="product-info">
+      <h3>Tuna Empanada of OTOP</h3>
+      <p>A tasty delicacy of Santa Cruz that fulfill your hunger and brings after-smile.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  function openModal(title, description, imageSrc) {
+  document.getElementById("modalTitle").textContent = title;
+  document.getElementById("modalDescription").textContent = description;
+  document.getElementById("modalImage").src = imageSrc;
+  document.getElementById("productModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("productModal").style.display = "none";
+}
+
+
+  function toggleMenu() {
+    document.querySelector(".navbar").classList.toggle("active");
+  }
+</script>
+
+</body>
+</html>

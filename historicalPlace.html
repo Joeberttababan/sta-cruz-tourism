@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Waterfalls - Santa Cruz</title>
+  <title>Historical - Santa Cruz</title>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/placestogo.css">
 
@@ -28,7 +28,7 @@
         <div class="dropdown-sub">
           <a href="#">Potential Tourist Spots ▸</a>
           <div class="dropdown-sub-content">
-            <a href="beaches.html">Beaches</a>
+            <a href="beaches.html"><u>Beaches</u></a>
             <a href="greenhills.html">Greenhills</a>
             <a href="mangroveFarms.html">Mangrove Farms</a>
             <a href="scmunicipalHall.html">Municipal Hall</a>
@@ -41,7 +41,7 @@
           <div class="dropdown-sub-content">
             <a href="churches.html">Churches</a>
             <a href="waterfalls.html">Waterfalls</a>
-            <a style="padding-bottom:100px;"  href="historicalPlace.html">Historical Tourism</a>
+            <a style="padding-bottom:100px;"  href="historicalPlace.html"><u>Historical Tourism</u></a>
           </div>
         </div>
   
@@ -60,22 +60,22 @@
 <section id="hero-section" class="hero">
   <div class="hero-content">
     <div class="hero-text">
-      <h1 id="main-title">Waterfalls</h1>
+      <h1 id="main-title">Historical Places</h1>
       <p id="main-description" class="descriptions">
-       The water that flows by the river, where it falls downstream around the mountains of Sta. cruz showing its beauty that helps local for there farmlands and attract tourist to come and enjoy the wonderful view hidden in the mountains.
+        Built with artistry that comes from the past and viewed to the present.
       </p>
       <div class="btns">
         <button class="read-more">Google View</button>
         <button class="view-more">View More</button>
-      </div>
+        </div>
     </div>
     <div>
       <img src="assets/churchHero.jpg" alt="Nature Main" style="height:350px;" class="main-img" id="main-image" />
       <div class="hero-thumbnails">
-        <img class="thumb-images" src="assets/rakrakFalls.jpg" alt="Rakrak" onclick="changeMainContent(0)">
-        <img class="thumb-images" src="assets/lipitFalls.jpg" alt="Lipit" onclick="changeMainContent(1)">
-        <img class="thumb-images" src="assets/dalumpinasFalls.jpg" alt="Dalumpinas" onclick="changeMainContent(2)">
-        <img class="thumb-images" src="assets/falls.jpg" alt="Kagutungan" onclick="changeMainContent(3)">
+        <img src="assets/rakrakFalls.jpg" alt="Rakrak" onclick="changeMainContent(0)">
+        <img src="assets/lipitFalls.jpg" alt="Lipit" onclick="changeMainContent(1)">
+        <img src="assets/dalumpinasFalls.jpg" alt="Dalumpinas" onclick="changeMainContent(2)">
+        <img src="assets/falls.jpg" alt="Kagutungan" onclick="changeMainContent(3)">
       </div>
     </div>
   </div>
@@ -85,12 +85,12 @@
 <section class="gallery">
   <div class="choices">
     <div onclick="changeMainContent(0)">
-      <img src="assets/rakrakFalls.jpg" alt="Group of Falls" />
-      <h1>San Antonio Three Little Falls</h1>
+      <img src="assets/kiosk.jpg" alt="history 1" />
+      <h1>Spanish Architecture Inspired Kiosk</h1>
     </div>
-    <div onclick="changeMainContent(3)">
-      <img class="choices-images" src="assets/falls.jpg" alt="Falls 4" />
-      <h1>Kagutungan Falls</h1>
+    <div onclick="changeMainContent(1)">
+      <img src="assets/genLunaMonument.jpg" alt="history 2" />
+      <h1>Gen. Antonio Luna Monument</h1>
     </div>
   </div>
 </section>
@@ -100,7 +100,7 @@
   <div class="modal-content">
     <span class="close-btn">&times;</span>
     <div style="background: rgba(60, 122, 238, 0.8); border-radius:10px; padding: 10px;">
-      <h2>Falls</h2>
+      <h2>Historical Places</h2>
       <p>Click Your Desired Destination For Directions and Map</p>
     </div>
     <img src="">
@@ -110,31 +110,26 @@
 <div id="viewmore-modal" class="modal">
   <div class="modal-content">
     <span class="close-viewmore">&times;</span>
-    <h2>More About Falls</h2>
+    <h2>View more about Sta. Cruz Historical Places</h2>
     <ul></ul>
   </div>
 </div>
 
 <script>
   const titles = [
-    "Rakrak Falls",
-    "Lipit Falls",
-    "Dalumpinas Falls",
-    "Kagutungan Falls"
+    "Spanish Architecture Inspired Kiosk",
+    "Gen. Antonio Luna Monument",
+    ""
   ];
 
   const descriptions = [
-      "Rakrak Falls is a hidden paradise in the heart of Santa Cruz, surrounded by dense foliage and echoing with nature’s symphony.",
-      "Lipit Falls offers a serene spot for quiet reflection, with gentle cascades and clear waters perfect for cooling off.",
-      "Dalumpinas Falls is a narrow yet powerful stream cutting through a rocky forest trail, popular among local hikers.",
-      "Escape the ordinary and dive into nature’s magic at Kagutungan Falls! Just a breezy 10-minute trek away, this pristine waterfall surrounded by towering trees and giant rocks promises a refreshing adventure. Take a dip in its clean, cool waters, or enjoy a picnic in one of its cozy cottages or spacious function hall. With comfort rooms, running water, and a grilling area — you’ll feel at home while soaking in paradise! For only ₱20, you're not just visiting — you're supporting local nature, too!"
+  "This historical tourism site was constructed in 1939 and was fashioned after a spanish architectural design. Aftetr being a little worn out from years of damage, it was renovated in 2000 under the administration of mayor Terisita C. Valle. At the northern portion, about ten meters from the kiosk, were markers bearing the names of the brave veterans of World War II.",
+  "This 85-year old structure was built in 1934 during the administration ofMayor Manuel S. Josue. A handwritten inscription on its western side reveals that the statue is a memento from the Governor Alejandro Quirolgico, Ilocos Sur Provincial Governor, built through the help of the town of Sta. Cruz and the Loyal Sons and 'Daughters' Association."
     ];
 
   const viewMoreContents = [
-    "The San Antonio Triple Falls is a series of three waterfalls in close succession. The first two waterfalls, Lipit and Dalumpinas are low waterfalls while the third and last is the longest waterfall in Sta. Cruz – Rakrak Falls.Attractions, Activities, Amenities.The main activities in all three falls are swimming, sight-seeing, picnicking and trekking.Because the San Antonio Triple Falls is still classified as a potential tourism site, its facilities are not yet developed and the attractions and activities available are stillimited. Accommodation/s There are no available accommodations within the vicinity of the site; however, the nearest available accommodation is located just 8.2 km away. Access The road from the national highway up until the stream where the waterfalls flow is concrete. The short distance from the concreted road to Lipit falls is made of dirt but can be accessed by tricycle and private vehicles with a travel time of just five minutes.",
-    "The San Antonio Triple Falls is a series of three waterfalls in close succession. The first two waterfalls, Lipit and Dalumpinas are low waterfalls while the third and last is the longest waterfall in Sta. Cruz – Rakrak Falls.Attractions, Activities, Amenities.The main activities in all three falls are swimming, sight-seeing, picnicking and trekking.Because the San Antonio Triple Falls is still classified as a potential tourism site, its facilities are not yet developed and the attractions and activities available are stillimited. Accommodation/s There are no available accommodations within the vicinity of the site; however, the nearest available accommodation is located just 8.2 km away. Access The road from the national highway up until the stream where the waterfalls flow is concrete. The short distance from the concreted road to Lipit falls is made of dirt but can be accessed by tricycle and private vehicles with a travel time of just five minutes.",
-    "The San Antonio Triple Falls is a series of three waterfalls in close succession. The first two waterfalls, Lipit and Dalumpinas are low waterfalls while the third and last is the longest waterfall in Sta. Cruz – Rakrak Falls.Attractions, Activities, Amenities.The main activities in all three falls are swimming, sight-seeing, picnicking and trekking.Because the San Antonio Triple Falls is still classified as a potential tourism site, its facilities are not yet developed and the attractions and activities available are stillimited. Accommodation/s There are no available accommodations within the vicinity of the site; however, the nearest available accommodation is located just 8.2 km away. Access The road from the national highway up until the stream where the waterfalls flow is concrete. The short distance from the concreted road to Lipit falls is made of dirt but can be accessed by tricycle and private vehicles with a travel time of just five minutes.",
-    "An open function hall and cottages/ small huts with tables and chairs provide comfortable dining experience while basking in nature. A makeshift kitchen with a simple griller and a lavatory is also installed in one corner. Public restrooms and bathrooms for male and female and handwashing facilities are also set up. A Piso Wifi equipment, owned by a private entrepreneur, is placed to cater to tourists who need to post and share their snapshots immediately."
+    "Replica of Mexico’s basilica, with stained glass and a retablo.",
+    "A peaceful site for worshipers and the faithful in Santa Cruz."
   ];
 
   const googleLinks = [
@@ -145,53 +140,48 @@
   ];
 
   const images = [
-      "assets/rakrakFalls.jpg",
-      "assets/lipitFalls.jpg",
+      "assets/kiosk.jpg",
+      "assets/genLunaMonument.jpg",
       "assets/dalumpinasFalls.jpg",
       "assets/falls.jpg"
     ];
 
-    const thumbnails = [
-  [
-    { src: "assets/rakrakFalls.jpg", title: "Rakrak Falls",description:"Rakrak Falls is a hidden paradise in the heart of Santa Cruz, surrounded by dense foliage and echoing with nature’s symphony"},
-    { src: "assets/lipitFalls.jpg", title: "Lipit Falls",description:"Lipit Falls offers a serene spot for quiet reflection, with gentle cascades and clear waters perfect for cooling off"},
-    { src: "assets/dalumpinasFalls.jpg", title: "Dalumpinas Falls", description:"Dalumpinas Falls is a narrow yet powerful stream cutting through a rocky forest trail, popular among local hikers." }
-  ],
-  // ... other thumbnails array entries
-];
+  const thumbnails = [
+    ["assets/thumbnails/kiosk1.jpg", "assets/thumbnails/kiosk2.jpg", "assets/thumbnails/r1.jpg", "assets/thumbnails/r1.jpg"],
+    ["assets/thumbnails/genLuna.jpg", "assets/thumbnails/genLuna1.jpg", "assets/thumbnails/genLuna2.jpg", "assets/thumbnails/l1.jpg"],
+    ["assets/thumbnails/d1.jpg", "assets/thumbnails/d1.jpg", "assets/thumbnails/d1.jpg", "assets/thumbnails/d1.jpg"],
+    ["assets/thumbnails/k1.jpg", "assets/thumbnails/k2.jpg", "assets/thumbnails/k3.jpg", "assets/thumbnails/k4.jpg"]
+  ];
 
   // ✅ New: Hero background images
   const heroBackgrounds = [
-      "assets/rakrakFalls.jpg",
-      "assets/lipitFalls.jpg",
-      "assets/dalumpinasFalls.jpg",
-      "assets/falls.jpg"
+      "assets/kiosk.jpg",
+      "assets/genLunaMonument.jpg"
     ];
 
   let currentIndex = 0;
 
   function changeMainContent(index) {
   currentIndex = index;
-
   document.getElementById('main-title').innerText = titles[index];
   document.getElementById('main-description').innerText = descriptions[index];
   document.getElementById('main-image').src = images[index];
+
+  // Change hero background
   document.getElementById("hero-section").style.background = `url('${heroBackgrounds[index]}') no-repeat center center / cover`;
 
+  // Smooth scroll to hero section
+  document.getElementById("hero-section").scrollIntoView({ behavior: "smooth" });
+
+  // Update thumbnails
   const thumbnailContainer = document.querySelector('.hero-thumbnails');
   thumbnailContainer.innerHTML = "";
-
-  thumbnails[index].forEach((thumb, i) => {
+  thumbnails[index].forEach((src, i) => {
     const img = document.createElement('img');
-    img.src = thumb.src;
-    img.alt = thumb.title;
+    img.src = src;
+    img.alt = `Thumb ${i + 1}`;
     img.style.cssText = "width:80px;height:60px;object-fit:cover;margin-right:10px;border:2px solid white;border-radius:6px;cursor:pointer;";
-    img.onclick = () => {
-      document.getElementById('main-image').src = thumb.src;
-      document.getElementById('main-title').innerText = thumb.title;
-      document.getElementById('main-description').innerText = thumb.description;
-      document.getElementById("hero-section").style.background = `url('${thumb.src}') no-repeat center center / cover`;
-    };
+    img.onclick = () => document.getElementById('main-image').src = src;
     thumbnailContainer.appendChild(img);
   });
 }
@@ -222,7 +212,7 @@
 
   // Initial load
   changeMainContent(0);
-
+  
   function toggleMenu() {
   document.querySelector(".navbar").classList.toggle("active");
 }

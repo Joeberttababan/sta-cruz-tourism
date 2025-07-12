@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Municipal Hall - Santa Cruz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/placestogo.css">
+
+</head>
+<body>
+
+ <!-- Navbar -->
+ <header class="main-header" style="background-image:url(assets/mainHeaderBg1.png); background-repeat:no-repeat; background-size: cover;">
+  <div class="logo">
+    <img class="logo1" style="width:8vw; height:10vh;" src="assets/fMarchLogo.png" alt="Logo 1">
+    <img class="logo2" src="assets/staCruzLogo.png" alt="Logo 2">
+  </div>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+  
+    <div class="dropdown">
+      <a href="#"><u>Attractions</u></a>
+      <div class="dropdown-content">
+  
+        <!-- Nested Dropdown: Potential -->
+        <div class="dropdown-sub">
+          <a href="#">Potential Tourist Spots ▸</a>
+          <div class="dropdown-sub-content">
+            <a href="beaches.html"><u>Beaches</u></a>
+            <a href="greenhills.html">Greenhills</a>
+            <a href="mangroveFarms.html">Mangrove Farms</a>
+            <a href="scmunicipalHall.html"><u>Municipal Hall</u></a>
+          </div>
+        </div>
+  
+        <!-- Nested Dropdown: Emerging -->
+        <div class="dropdown-sub">
+          <a href="#">Emerging Tourist Spots ▸</a>
+          <div class="dropdown-sub-content">
+            <a href="churches.html">Churches</a>
+            <a href="waterfalls.html">Waterfalls</a>
+            <a style="padding-bottom:100px;"  href="historicalPlace.html">Historical Tourism</a>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+    <a href="townProducts.html">Town Products</a>
+    <a href="hotelAndResorts.html">Hotel & Resorts</a>
+    <a href="restaurants.html">Restaurants</a>
+    <a href="tourismCircuit.html" class="active">Daytrips</a>
+    <a href="index.html#about-footer">About Us</a>
+  </nav>
+  
+</header>
+
+<!-- ✅ Hero section with ID added -->
+<section id="hero-section" class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1 id="main-title">Municipal Hall</h1>
+      <p id="main-description" class="descriptions">
+        The ancestral home of the great leaders. That serve their very best to improve the qulity of life every citizen residing in the Municipality of Sta. cruz and even outside.
+      </p>
+      <div class="btns">
+        <button class="read-more">Google View</button>
+        <button class="view-more">View More</button>
+        </div>
+    </div>
+    <div>
+      <img src="assets/municipal hall.jpg" alt="Nature Main" style="height:350px;" class="main-img" id="main-image" />
+      <div class="hero-thumbnails">
+        <img src="assets/mhall1.jpg" alt="mhall" onclick="changeMainContent(0)">
+        <img src="assets/fhall1.jpg" alt="fhall" onclick="changeMainContent(1)">
+        <img src="assets/dalumpinasFalls.jpg" alt="Dalumpinas" onclick="changeMainContent(2)">
+        <img src="assets/falls.jpg" alt="Kagutungan" onclick="changeMainContent(3)">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Section -->
+<section class="gallery">
+  <div class="choices">
+    <div onclick="changeMainContent(0)">
+      <img  src="assets/mhall1.jpg" alt="mhall" />
+      <h1>Municipal Hall</h1>
+    </div>
+    <div onclick="changeMainContent(1)">
+      <img src="assets/fhall1.jpg" alt="Function Hall" />
+      <h1>Function Hall</h1>
+    </div>
+    <div onclick="changeMainContent(2)">
+      <img src="assets/abcHall.jpg" alt="ABC Hall" />
+      <h1>Associations Of Barangay Captains Hall</h1>
+    </div>
+    <div onclick="changeMainContent(3)">
+      <img src="assets/complex" alt="complex" />
+      <h1>Santa Cruz Complex</h1>
+    </div>
+  </div>
+</section>
+
+<!-- Modals -->
+<div id="popup-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div style="background: rgba(60, 122, 238, 0.8); border-radius:10px; padding: 10px;">
+      <h2>Municipal Hall</h2>
+      <p></p>
+    </div>
+    <img src="">
+  </div>
+</div>
+
+<div id="viewmore-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-viewmore">&times;</span>
+    <h2>View more about Sta. Cruz Municipal Hall</h2>
+    <ul></ul>
+  </div>
+</div>
+
+<script>
+  const titles = [
+    "Municipal Hall Building",
+    "Function Hall",
+    "Association of Barangay Captains Hall",
+    "Santa Cruz Sports Complex",
+    ""
+  ];
+
+  const descriptions = [
+  "Built during the 1920's, this aged structrure used to be the residence of the Municipal President. The building, however , was not fully preserved because time has worn out some of its parts. Succeding Municipal Mayors had its roof, ceiliing, and floor boards repaired. Though it has undergone major repairs, the building is still a notable historical site because of the rich supply of memoir stored inits every fiber. Its structure looks the same as it did 93 years ago. it is accessible by almost all vehicles and located 800 meters from the national Highway.",
+  "The Function Hall serves the guest's and the citizens who seek help for their daily activities. This is where people gather to meet and greet and run there own kind of motives.",
+  "Built during the 1920's, this aged structrure used to be the residence of the Municipal President. The building, however , was not fully preserved because time has worn out some of its parts. Succeding Municipal Mayors had its roof, ceiliing, and floor boards repaired. Though it has undergone major repairs, the building is still a notable historical site because of the rich supply of memoir stored inits every fiber. Its structure looks the same as it did 93 years ago. it is accessible by almost all vehicles and located 800 meters from the national Highway.",
+  "The Function Hall serves the guest's and the citizens who seek help for their daily activities. This is where people gather to meet and greet and run there own kind of motives."
+    ];
+
+
+  const viewMoreContents = [
+    "more info about the municipal",
+    "A peaceful site for worshipers and the faithful in Santa Cruz.",
+    "more info about the municipal",
+    "A peaceful site for worshipers and the faithful in Santa Cruz."
+  ];
+
+  const googleLinks = [
+    "https://www.google.com/maps/dir/Sta.+Cruz+Public+Market/Municipal+Hall,+3FM2%2BJ23,+Santa+Cruz,+2713+Ilocos+Sur/@17.076256,120.4411683,14z/data=!4m13!4m12!1m5!1m1!1s0x338e1e8ae26c3c85:0x7dcdfc81a12c78db!2m2!1d120.4571499!2d17.0812035!1m5!1m1!1s0x338e1e88d9d625af:0xc38d3c0d91606036!2m2!1d120.4501777!2d17.0840043!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D",
+    "https://www.google.com/maps/dir/Sta.+Cruz+Public+Market/Municipal+Hall,+3FM2%2BJ23,+Santa+Cruz,+2713+Ilocos+Sur/@17.076256,120.4411683,14z/data=!4m13!4m12!1m5!1m1!1s0x338e1e8ae26c3c85:0x7dcdfc81a12c78db!2m2!1d120.4571499!2d17.0812035!1m5!1m1!1s0x338e1e88d9d625af:0xc38d3c0d91606036!2m2!1d120.4501777!2d17.0840043!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D",
+    "https://www.google.com/maps/dir/Sta.+Cruz+Public+Market/Municipal+Hall,+3FM2%2BJ23,+Santa+Cruz,+2713+Ilocos+Sur/@17.076256,120.4411683,14z/data=!4m13!4m12!1m5!1m1!1s0x338e1e8ae26c3c85:0x7dcdfc81a12c78db!2m2!1d120.4571499!2d17.0812035!1m5!1m1!1s0x338e1e88d9d625af:0xc38d3c0d91606036!2m2!1d120.4501777!2d17.0840043!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D",
+    "https://www.google.com/maps/dir/Sta.+Cruz+Public+Market/Municipal+Hall,+3FM2%2BJ23,+Santa+Cruz,+2713+Ilocos+Sur/@17.076256,120.4411683,14z/data=!4m13!4m12!1m5!1m1!1s0x338e1e8ae26c3c85:0x7dcdfc81a12c78db!2m2!1d120.4571499!2d17.0812035!1m5!1m1!1s0x338e1e88d9d625af:0xc38d3c0d91606036!2m2!1d120.4501777!2d17.0840043!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D",
+    ""
+  ];
+
+  const images = [
+      "assets/mhall1.jpg",
+      "assets/fhall1.jpg",
+      "assets/dalumpinasFalls.jpg",
+      "assets/falls.jpg"
+    ];
+
+  const thumbnails = [
+    ["assets/mhall1.jpg", "assets/mhall5.jpg", "assets/thumbnails/mhall3.jpg", "assets/munihall.jpg"],
+    ["assets/", "assets/", "assets/", "assets/"],
+    ["assets/", "assets/", "assets/", "assets/"],
+    ["assets/", "assets/", "assets/", "assets/"],
+  ];
+
+  // ✅ New: Hero background images
+  const heroBackgrounds = [
+      "assets/mhall1.jpg",
+      "assets/fhall1.jpg",
+      "assets/mhall1.jpg",
+      "assets/fhall1.jpg"
+    ];
+
+  let currentIndex = 0;
+
+  function changeMainContent(index) {
+    currentIndex = index;
+    document.getElementById('main-title').innerText = titles[index];
+    document.getElementById('main-description').innerText = descriptions[index];
+    document.getElementById('main-image').src = images[index];
+
+    // ✅ Change hero background
+    document.getElementById("hero-section").style.background = `url('${heroBackgrounds[index]}') no-repeat center center / cover`;
+
+    // Update thumbnails
+    const thumbnailContainer = document.querySelector('.hero-thumbnails');
+    thumbnailContainer.innerHTML = "";
+    thumbnails[index].forEach((src, i) => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = `Thumb ${i + 1}`;
+      img.style.cssText = "width:80px;height:60px;object-fit:cover;margin-right:10px;border:2px solid white;border-radius:6px;cursor:pointer;";
+      img.onclick = () => document.getElementById('main-image').src = src;
+      thumbnailContainer.appendChild(img);
+    });
+  }
+
+  document.querySelector(".read-more").addEventListener("click", () => {
+    window.open(googleLinks[currentIndex], "_blank");
+  });
+
+  const viewMoreModal = document.getElementById("viewmore-modal");
+  const viewMoreBtn = document.querySelector(".view-more");
+  const closeViewMore = document.querySelector(".close-viewmore");
+  const modalContent = viewMoreModal.querySelector("div");
+
+  viewMoreBtn.addEventListener("click", () => {
+    modalContent.innerHTML = `<p><strong><h1>${titles[currentIndex]}</h1></strong>: ${viewMoreContents[currentIndex]}</p>`;
+    viewMoreModal.style.display = "block";
+  });
+
+  closeViewMore.addEventListener("click", () => {
+    viewMoreModal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === viewMoreModal) {
+      viewMoreModal.style.display = "none";
+    }
+  });
+
+  // Initial load
+  changeMainContent(0);
+
+  function toggleMenu() {
+  document.querySelector(".navbar").classList.toggle("active");
+}
+</script>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>

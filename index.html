@@ -13,25 +13,59 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Boldonse&family=Fugaz+One&family=Inter:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Oswald:wght@200..700&family=Pacifico&family=Protest+Strike&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
 
   <!-- Header -->
   <header class="main-header">
     <div class="logo">
-      <img style="width:8vw; height:10vh;" src="assets/fMarchLogo.png" alt="Logo 1">
-      <img src="assets/staCruzLogo.png" alt="Logo 2">
+      <img class="logo1" style="width:8vw; height:10vh;" src="assets/fMarchLogo.png" alt="Logo 1">
+      <img class="logo2" src="assets/staCruzLogo.png" alt="Logo 2">
     </div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     <nav class="navbar">
-      <a href="#">HOME</a>
-      <a href="#explore-section">PLACES-TO-GO</a>
-      <a href="#about-footer">ABOUT US</a>
-      <a href="#about-footer">CONTACT</a>
+      <a href="index.html"><u>Home</u></a>
+    
+      <div class="dropdown">
+        <a href="#">Attractions</a>
+        <div class="dropdown-content">
+    
+          <!-- Nested Dropdown: Potential -->
+          <div class="dropdown-sub">
+            <a href="#">Potential Tourist Spots ▸</a>
+            <div class="dropdown-sub-content">
+              <a href="beaches.html"><u>Beaches</u></a>
+              <a href="greenhills.html">Greenhills</a>
+              <a href="mangroveFarms.html">Mangrove Farms</a>
+              <a href="scmunicipalHall.html">Municipal Hall</a>
+            </div>
+          </div>
+    
+          <!-- Nested Dropdown: Emerging -->
+          <div class="dropdown-sub">
+            <a href="#">Emerging Tourist Spots ▸</a>
+            <div class="dropdown-sub-content">
+              <a href="churches.html">Churches</a>
+              <a href="waterfalls.html">Waterfalls</a>
+              <a style="padding-bottom:100px;"  href="historicalPlace.html">Historical Tourism</a>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+      <a href="townProducts.html">Town Products</a>
+      <a href="hotelAndResorts.html">Hotel & Resorts</a>
+      <a href="restaurants.html">Restaurants</a>
+      <a href="tourismCircuit.html" class="active">Daytrips</a>
+      <a href="index.html#about-footer">About Us</a>
     </nav>
+    
   </header>
 
   <!-- Hero Banner -->
-  <section class="hero" style="  background: url('assets/municipalHall.jpeg') no-repeat center center / cover;
+  <section class="hero" style="  background: url('assets/munihall.jpg') no-repeat center center / cover;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -39,14 +73,16 @@
   padding-left: 6vw;
   position: relative;
   color: white;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);">
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9);">
     <div class="hero-text">
       <h1>EXPLORE!!</h1>
-      <h1 style="font-size:37px;">S A N T A &nbsp; C R U Z</h1><hr>
-      <h2>We Offer...<br>NATURE. SUN AND BEACH. CULTURAL TOURISM</h2>
+      <h2 style="font-size:37px;">S A N T A &nbsp; C R U Z</h2><hr>
+      <p class="hero-p">We Offer 20 tourism sites, for you to enjoy...<br>Nature. Sun and Beach. Cultural Tourism</p>
       
     </div>
   </section>
+
+  <!--explore Now-->
 
   <!-- Scrollable Places Section -->
   <section class="places-wrapper" id="explore-section" style="
@@ -54,38 +90,43 @@
     height: 110vh;
     padding: 40px 20px;
   ">
-    <h1 style="color:rgb(25, 109, 36); position:relative; z-index:4; margin-top:50px;">Explore Now</h1>
+    <h1 style="color:#ffffff; position:relative; z-index:4; margin-top:50px;">Explore Now</h1>
     <div class="slider-container">
     <div class="places-slider">
-<!--      <div class="place-card" id="imaginary-cards">
-      </div>
-      <div class="place-card" id="imaginary-cards">
-      </div>-->
-      <div class="place-card ">
-        <img src="assets/churches.jpg" alt="Churches">
-        <h3><a class="places" href="churches.html">CHURCHES</a></h3>
-        <p>Spanish missionaries played a key role in the town's development, establishing religious communities and naming settlements after religious figures or symbols.</p>
-        </a>
+      <div class="place-card" alt="The Municipal Hall">
+        <a href="scmunicipalHall.html" ><img src="assets/municipalHall.jpeg" alt="Municipal Hall"></a>
+        <h3><a class="places" href="scmunicipalHall.html">Municipal Hall</a></h3>
+        <p>Come and visit the home of one of the richest municipalties which is the municipality of Sta. Cruz in the province of Ilocos Sur</p>
       </div>
       <div class="place-card">
-        <img src="assets/falls.jpg" alt="Waterfalls">
+        <a href="churches.html"><img src="assets/churches.jpg" alt="Churches"></a>
+        <h3><a class="places" href="churches.html">CHURCHES</a></h3>
+        <p>Sta. Cruzian's comes with old churches and inspired designs from the very known churches around the world. aiming to beautify all the churches and encouraging tourist to visit this beauty.</p>
+      </div>
+      <div class="place-card">
+        <a href="waterfalls.html"><img src="assets/falls.jpg" alt="Waterfalls"></a>
         <h3><a class="places" href="waterfalls.html">WATERFALLS</a></h3>
         <p>Dicover The hidden Gems of the Municipality of Sta. Cruz Ilocos Sur. The Waterfalls That Embraces the mountain and gives it life. Come and Explore The Beauty of the Municipality.</p>
       </div>
-      <div class="place-card active">
-        <img src="assets/mangroveFarm.jpg" alt="Mangrove Farms">
+      <div class="place-card">
+      <a href="mangroveFarms.html"><img src="assets/mangroveFarm.jpg" alt="Mangrove Farms"></a>
         <h3><a class="places" href="mangroveFarms.html">MANGROVE FARMS</a></h3>
-        <p>There are some places to be discovered and shine from the unkown through discovery, one place that emerges and showing its beauty is the mangroves of Sta. Cruz Ilocos Sur</p>
+        <p>There are some places to be discover and shine from the unkown through discovery, one place that emerges and showing its beauty through greenery, its the mangroves of Sta. Cruz Ilocos Sur</p>
       </div>
       <div class="place-card">
-        <img src="assets/beach.jpg" alt="Beaches">
+        <a href="beaches.html"><img src="assets/beach.jpg" alt="Beaches"></a>
         <h3><a class="places" href="beaches.html">BEACHES</a></h3>
-        <p>The municipality of Sta cruz, has most of its barangays are alongside the beaches which locals and even tourist enjoy to swim onto. Come and Swim with the locals and be treated as a local.</p>
+        <p>The municipality of Sta cruz, has most of its barangays are alongside the beaches, which locals and even tourist enjoy to swim onto. Come and Swim with the locals and be treated as a local.</p>
       </div>
       <div class="place-card">
-        <img src="assets/daliganGreenhills.jpg" alt="Greenhills">
+        <a href="greenhills.html"><img src="assets/daliganGreenhills.jpg" alt="Greenhills"></a>
         <h3><a class="places" href="greenhills.html">GREENHILLS</a></h3>
         <p>Up on the mountains of the Sta. Cruz Ilocos Sur there resides the beauty, the grass that waves to the wind mountains are covered in grass and trees that makes it beautiful, toured by the locals and some other interested tourist visit this place.</p>
+      </div>
+      <div class="place-card" alt="Historical Place">
+        <a href="historicalPlace.html"><img src="assets/kiosk.jpg" alt="Historical place"></a>
+        <h3><a class="places" href="historicalPlace.html">Historical places</a></h3>
+        <p>Spanish missionaries played a key role in the town's development, establishing religious communities and naming settlements after religious figures or symbols.</p>
       </div>
       <div class="place-card" id="imaginary-cards">
       </div>
@@ -94,23 +135,20 @@
     </div>
     </div>
   </section>
-  
+
   <footer class="footer" id="about-footer">
     <div class="footer-container">
       <!-- Company Info -->
       <div class="footer-section">
         <h2>Santa Cruz</h2>
-        <p>Explore and Enjoy the sceneries that SANTA CRUZ may offer to you! Welcome to our beloved Municipality.</p>
+        <p>Acknowledgement Our sincerest gratitude goes out to all offices and personnel involved in the preparation of this <strong>Municipal Tourism Development Plan 2024-2029</strong>, particularly the various departments of LGU – Sta. Cruz, Ilocos Sur and the 49 Barangay Local Government Units of this LGU for their assistance and cooperation especially during data gathering. We would also like to thank the National Anti-Poverty Commission and the Department of Tourism – Regional Office I for extensively providing technical assistance and for unselfishly devoting their time and expertise in the preparation of this plan.  We would also like to express our heartfelt thanks and appreciation to CGV the Explorer for allowing us to use his well composed, high resolution pictures that further highlighted the beauty of the tourism sites of Sta. Cruz. Lastly, this plan would not be completed without the leadership of Mayor <strong><u>Teresita C. Valle</u></strong> and <strong><u>Virgilio J. Valle</u></strong>. Their strong commitment to tourism development served as the motivation in the completion of this plan.<br>
+          May this plan serve as a roadmap to guide the current and future generations towards achieving our vision of a progressive and sustainable Sta. Cruz tourism.
+          <br>MTDP Technical Working Group</p>
       </div>
   
       <!-- About Us -->
       <div class="footer-section">
         <h2>About Us</h2>
-        <p><strong>MPDC - MAYOR'S OFFICE</strong></p>
-        <p><strong>Glicerio Pasion Jr., EnP.</strong><br>Municipal Planning and Development Coordinator</p>
-        <p><strong>Gracee S. Gumnad</strong><br>Planning and Development Officer III</p>
-        <p><strong>Engr. Kirby V. Del Rosario</strong><br>Planning and Development Officer II</p>
-        <p><strong>Star Jhoy A. Pucio</strong><br>Statistician I</p>
         <p><strong>Joebert D. Tababan</strong><br>Student Intern/Dev</p>
       </div>
   
@@ -136,6 +174,12 @@
     </div>
   </footer>
   
-  <script src="script.js"></script>
+  <script >
+      //responsiveness
+
+      function toggleMenu() {
+    document.querySelector(".navbar").classList.toggle("active");
+  }
+  </script>
 </body>
 </html>

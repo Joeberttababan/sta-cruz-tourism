@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tourism Circuit - Santa Cruz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/placestogo.css">
+  <style>
+    body{
+      background: linear-gradient(to right, #48507a, #1d0783);
+    }
+    h1{
+      font-family: 'Oswald', sans-serif;
+      color:white;
+      margin-top:100px;
+      font-size:3rem !important;
+    }
+    .highlight-section {
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(to right, #1e33ad, #2196f3);
+      color: white;
+    }
+    .highlight-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .highlight-section p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    thead{
+      text-align:center;
+    }
+    tr{
+      background-color:rgb(107, 121, 165);
+      color:white;
+    }
+    tr:hover{
+      border-style:solid;
+      border-color:white;
+      border-color:rgb(209, 83, 83);
+      color:black;
+    }
+    tr:nth-child(even){
+      background-color:rgb(50, 52, 158);
+      color:rgb(223, 213, 213);
+    }
+    tr:nth-child(even):hover{
+      color:black;
+      border-style:solid;
+      border-color:rgb(209, 83, 83);
+    }
+    td{
+      border-style: solid;
+      border-color: white;
+    }
+    @media(max-width: 350px){
+      .circuit-table-container{
+        max-width:100vw;
+      }
+      h1{
+        margin-top:80px;
+        margin-bottom:0px;
+        font-size: 30px !important;
+      }
+      th{
+        font-size:10px !important;
+      }
+      td{
+        max-width:20vw !important;
+        max-height:20vh !important;
+        text-align: left !important;
+        font-size: 5px !important;
+      }
+    }
+    @media(max-width: 331px){
+      .circuit-table-container{
+        max-width:70vw;
+        overflow-x: scroll;
+        overflow: hidden;
+        overflow-y:scroll;
+      }
+    }
+    /*
+    tr{
+      background:linear-gradient(to bottom, rgb(96, 151, 206),rgb(8, 31, 83));
+      border-style:dotted;
+      border-color:white;
+      color:white;
+
+    }*/
+
+    @media(max-width: 400px){
+      .highlight-section h2{
+        font-size:1rem;
+      }
+      .highlight-section p{
+        font-size:.9rem;
+      }
+    }
+    @media(max-width: 300px){
+      .highlight-section h2{
+        font-size:1.2rem;
+      }
+      .highlight-section p{
+        font-size:.5rem;
+      }
+    }
+    .circuit-table-container {
+      padding: 2rem;
+      overflow-x: auto;
+    }
+    table.circuit-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #f8fbff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .circuit-table th,
+    .circuit-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    .circuit-table th {
+      background-color: #1e33ad;
+      color: white;
+    }
+    .circuit-table tr:hover {
+      background-color: #f1f1f1;
+    }
+    @media (max-width: 600px) {
+      .circuit-table th, .circuit-table td {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+      }
+    }
+    @media (max-width: 600px) {
+      .circuit-table th{
+        font-size: .9rem;
+        padding: 0.1rem;
+      }
+      .circuit-table td {
+         font: size 0.4em !important;
+      }
+    }
+    .find-container{
+       display:flex;
+       align-items: center;
+       flex-direction:row;
+       width:auto;
+       height: auto;
+       padding:10px;
+       gap:900px;
+    }
+    .search-box{
+      width:13vw;
+      height:5vh;
+      border-radius:10px;
+      border-style:none;
+    }
+    @media(max-width: 492px){
+    h1, img{
+      max-width:40vw;
+      max-height:30vh;
+    }
+  }
+  .tag-container{
+    position:fixed;
+    width:10vw;
+    height:10vh;
+    background-color:rgb(255, 255, 255);
+    border-radius: 90px 0px 0px 90px;
+    right:0;
+    top:50%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity:0.2;
+    display: flex;
+    flex-direction: column;
+    gap:2px;
+  }
+  .tag-container:hover, .tag-container:active{
+   background-color: #46a8c0;
+   color:white !important;
+   opacity:1;
+  }
+  a{
+    text-decoration:none;
+  }
+  a:hover{
+    color:white;
+    font-weight:700;
+  }
+  .search-container {
+  text-align: right;
+  margin-bottom:0;
+  border-style:none;
+  margin-top: 20px;
+}
+
+
+.search-container input {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 300px;
+}
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="main-header" style="background-image:url('assets/mainHeaderBg1.png'); background-size:cover;">
+  <div class="logo">
+    <img class="logo1" style="width:8vw; height:10vh;" src="assets/fMarchLogo.png" alt="Logo 1">
+    <img class="logo2" src="assets/staCruzLogo.png" alt="Logo 2">
+  </div>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+  
+    <div class="dropdown">
+      <a href="#"><u>Attractions</u></a>
+      <div class="dropdown-content">
+  
+        <!-- Nested Dropdown: Potential -->
+        <div class="dropdown-sub">
+          <a href="#">Potential Tourist Spots ▸</a>
+          <div class="dropdown-sub-content">
+            <a href="beaches.html">Beaches</a>
+            <a href="greenhills.html">Greenhills</a>
+            <a href="mangroveFarms.html">Mangrove Farms</a>
+            <a href="scmunicipalHall.html">Municipal Hall</a>
+          </div>
+        </div>
+  
+        <!-- Nested Dropdown: Emerging -->
+        <div class="dropdown-sub">
+          <a href="#">Emerging Tourist Spots ▸</a>
+          <div class="dropdown-sub-content">
+            <a href="churches.html">Churches</a>
+            <a href="waterfalls.html">Waterfalls</a>
+            <a style="padding-bottom:100px;"  href="historicalPlace.html">Historical Tourism</a>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+    <a href="townProducts.html">Town Products</a>
+    <a href="hotelAndResorts.html">Hotel & Resorts</a>
+    <a href="restaurants.html">Restaurants</a>
+    <a href="tourismCircuit.html"><u>Daytrips</u></a>
+    <a href="index.html#about-footer">About Us</a>
+  </nav>
+  
+</header>
+
+<section class="highlight-section">
+  <h2>Tourism Circuit - Explore Santa Cruz</h2>
+  <p>Follow our suggested tourism circuits to explore all that Santa Cruz has to offer—from cultural heritage to natural wonders and delicious local cuisine.</p>
+</section>
+<div class="tag-container">
+  <a href="tourismCircuit.html#pagna-pagna-section">Pagna-pagna</a>
+  <a href="tourismCircuit.html#daliasat-section">Daliasat</a>
+</div>
+</div>
+<!--seacrbox-->
+<div class="search-container">
+  <input type="text" id="searchInput" placeholder="Search itinerary..." />
+  <i class="fas fa-search"></i>
+</div>
+<h1 style="align-items:center; display: flex;">Daliasat<img src="assets/tricycle.png" alt="tricycle"><hr></h1>
+<section class="circuit-table-container">
+  <section id="daliasat-section">
+    <table class="circuit-table" id="itineraryTable">
+    <thead>
+      <tr>
+        <th>Circuit Components/Tourist Attractions</th>
+        <th>Possible Activities</th>
+        <th>Service Center</th>
+        <th>Enroute Facilities & Services</th>
+        <th>Frequency and Type of Transport Service</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Service Center (Pick-up Point)</td>
+        <td>Photo opportunity in front of the Sta. Cruz Public (5:55 AM)</td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Our Lady of the Immaculate Conception Parish Church (Poblacion Este)</td>
+        <td>Mass (6:00 AM - 7:40 AM)Church Visit/ Sightseeing (7:30 AM-7:40 AM)</td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>5-minute travel time from service center (pick up point) (5:55 AM - 6:00 AM)All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Mini Tour of Historical Sites (Municipal Building, ABC Hall, Spanish-Type Kiosk, General Antonio Luna Statue)</td>
+        <td>18-minute sight seeing, photo opportunity, guided tour(7:43 AM - 8:10 AM)(POBLACION SUR/WESTE)</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>20 mins</td>
+        <td>2-minute walking distance from the Immaculate Conception Parish Church(7:41 AM - 7:43 AM)</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Poblacion Este, Sta. Cruz/Sta. Lucia Public Market</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>10-minute travel from Sta. Cruz Municipal Hall to Sta. Lucia Church(8:11 AM - 8:21 AM)</td>
+      </tr>
+      <tr>
+        <td>Sta. Lucia Church</td>
+        <td>15-minute church visit, sight seeingPasalubong Center (weekdays only)(8:22 AM - 8:37 AM)</td>
+        <td>Sta. Lucia Public Market</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>All types of land transportation
+        </td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>20-minute travel from Sta. Lucia Church to St. John the Worker Parish (San Jose, Sta. Cruz)(8:38 AM - 8:58 AM)All types of transportation</td>
+      </tr>
+      <tr>
+        <td>St. John the Worker Parish (San Jose)</td>
+        <td>15-minute church visit, site seeing and photo opportunity(8:59 AM - 9:14 AM)</td>
+        <td>Poblacion Este</td>
+        <td>Refilling station</td>
+        <td>All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Poblacion Este</td>
+        <td></td>
+        <td>15-minute travel from St. John the Worker Parish (San Jose) to Our Lady of Fatima Church (Bacsayan)(9:15 AM - 9:30 AM)All types of transportation</td>
+      </tr>
+      <tr>
+        <td>Our Lady of Fatima Church (Bacsayan)</td>
+        <td>15-minute church visit, site seeing and photo opportunity(8:59 AM - 9:14 AM)</td>
+        <td>Poblacion Este</td>
+        <td></td>
+        <td>10-minute travel from Our Lady of Fatima Church (Bacsayan) to Our Lady of Mt. Carmel Church (Capariaan)(9:47 AM - 9:57 AM)All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Poblacion Este</td>
+        <td></td>
+        <td>5-minute travel from Our Lady of Mt. Carmel Church (Capariaan) to Resort\Accomodation (Aplaya de Isabel Resort or Mantanas Farm & Beach Resort)(10:14 AM - 10:19 AM)All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Resort/ accommodation (Aplaya de Isabel Resort or Mantanas Farm and Beach Resort)</td>
+        <td>Snack, rest, sight-seeing, picture-taking, swimming, lunch(10:20 AM - 2:15PM)</td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, resto bar, function hall, videoke</td>
+        <td>All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>15-minute travel from Resort\Accomodation (Aplaya de Isabel Resort or Mantanas Farm & Beach Resort) to Shrimp Farm (Villa Hermosa)(2:16 PM - 2:30 PM)All types of transportation</td>
+      </tr>
+      <tr>
+        <td>Shrimp Farm Tour (Villa Hermosa)</td>
+        <td>15 minutes sight-seeing and photo opportunity(2:31 PM - 2:46 PM)</td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>15-minute travel from Shrimp Farm (Villa Hermosa) to Empanada Making Demonstration Processing Area (Villa Garcia)(2:47 PM - 3:07 PM)All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Tuna Empanada Making (by appointment)</td>
+        <td>20-minute demonstration, product buying(3:08 PM - 3:28PM)</td>
+        <td>Poblacion Este</td>
+        <td>Refilling station</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Poblacion Este</td>
+        <td>gasoline station</td>
+        <td>5-minute travel from  Empanada Making Demonstration Processing Area (Villa Garcia) to Our Lady of Guadalupe Church (Sevilla)(3:29 PM - 3:34 PM)All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Our Lady of Guadalupe Church (Sevilla)</td>
+        <td>15-minute church visit, site seeing and photo opportunity(3:35 PM - 3:50 PM)</td>
+        <td>Poblacion Este</td>
+        <td>Eatery & convenience store, gasoline station</td>
+        <td>All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Poblacion Este</td>
+        <td>gasoline station</td>
+        <td>6-minute travel from Our Lady of Guadalupe Church (Sevilla) to Resort\Accomodation (Aplaya de Isabel Resort or Mantanas Farm & Beach Resort)(3:51 PM - 3:57 PM)All types of transportation</td>
+      </tr>
+      <tr>
+        <td>Resort/ accommodation (Aplaya de Isabel Resort or Mantanas Farm and Beach Resort)</td>
+        <td>boating, fishing (Mantanas Farm & Beach Resort)water bike, surfing, kayak, paddle board (Aplaya de Isabe Resort - Mambog) - exclusive to checked in guestsSunset watching (Mantanas or Mambog) - For those who checked in at Aplaya de Isabel (Mambog), they may watch the sunset in their accomodation or may go down to the beach just below their accomodation. On the other hand, for those who checked in at Mantanas Farm and Beach Resort, a 10-minute walking distance or 3-minute via land transpo from their accomodation to reach the Mantanas beach(3:57 PM - 6:00  PM)</td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, resto bar, function hall, videoke</td>
+        <td>motorcycle, PUV, jeepney, private car, walking distance</td>
+      </tr>
+      <tr>
+        <td>Travel time - return to resort/ accommodation (Aplaya de Isabel Resort or Mantanas Farm and Beach Resort)</td>
+        <td>Aplaya de Isabel Resort (6:01 PM - 6:03 PM)Mantanas Farm and Beach Resort(6:01 PM - 6:04 PM) - via transportation(6:01 PM - 6:11 PM) - via walking</td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, resto bar, function hall, videoke</td>
+        <td>walking distancemotorcycle, PUV, jeepney, private car, walking distance</td>
+      </tr>
+      <tr>
+        <td>Resort/ accommodation (Aplaya de Isabel Resort or Mantanas Farm and Beach Resort)</td>
+        <td>Dinner, leisure (drinking), night restAplaya de Isabel Resort (6:03 PM - 3:00 AM)</td>
+        <td>Poblacion Este</td>
+        <td>Refilling station</td>
+        <td>Accomodation, resto bar, function hall, videoke</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Poblacion Este</td>
+        <td></td>
+        <td>4-minute travel from  Resort\Accomodation (Aplaya de Isabel Resort or Mantanas Farm & Beach Resort) to Mantanas Fish Market(3:01 AM - 3:05 AM)All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Mantanas Fish Market (Optional)</td>
+        <td>Buy freshly caught fish(3:06 AM - 4:00 AM)</td>
+        <td>Poblacion Este</td>
+        <td></td>
+        <td>All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Poblacion Este</td>
+        <td></td>
+        <td>15-minute travel from  Mantanas Fish Market to Sta. Cruz Public market(4:01 AM - 4:15 AM)All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Sta. Cruz Public Market</td>
+        <td>Buy affordable fresh meat and vegetables(4:16 AM - 5:16 AM)</td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Poblacion Este</td>
+        <td></td>
+        <td>15-minute travel from Sta. Cruz Public Market going back to Resort\Accomodation (Aplaya de Isabel Resort or Mantanas Farm & Beach Resort)(5:16 AM - :5:31 AM)All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Resort/ accommodation (Aplaya de Isabel Resort or Mantanas Farm and Beach Resort)</td>
+        <td>Rest, breakfast(5:32 AM - 7:30 AM)</td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, resto bar, function hall, videoke</td>
+        <td>All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Tagudin Public Market</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>30-minute travel from Resort\Accomodation (Aplaya de Isabel Resort or Mantanas Farm & Beach Resort) to Tagudin Sun Dial (Tagudin, Ilocos Sur)(7:30 AM - 8:00 AM)All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Tagudin Sun Dial (adjacent municipality going South)</td>
+        <td>15-minute sight seeing and photo opportunity(8:01 AM - 8:16 AM)</td>
+        <td>Tagudin Public Market</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>St. Augustine's Church</td>
+        <td>15-minute sight seeing and photo opportunity(8:17 AM - 8:32 AM)</td>
+        <td>Tagudin Public Market</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>Walking distance from Tagudin Sun Dial</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Tagudin Public Market</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>10-minute travel from St. Augustine's Church to Mt. Tabor View Deck and Chapel(8:33 AM - 8:43 AM)All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Mt. Tabor View Deck and Chapel</td>
+        <td>15-minute sight seeing and photo opportunity(8:44 AM - 8:59 AM)</td>
+        <td>Tagudin Public Market</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Tagudin Public Market</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>30-minute travel from Mt. Tabor View Deck and Chapel going back to Resort\Accomodation (Aplaya de Isabel Resort or Mantanas Farm & Beach Resort)(9:00 AM - 9:30 AM)All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Return to Resort/ accommodation (Aplaya de Isabel Resort or Mantanas Farm and Beach Resort)</td>
+        <td>Check out(9:31 AM - 9:41 AM)</td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, resto bar, function hall, videoke</td>
+        <td>All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Travel time - if transporation is via Partas</td>
+        <td>End of Tour(9:49 AM)</td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, resto bar, function hall, videoke</td>
+        <td>6-minute travel from Resort\Accomodation (Aplaya de Isabel Resort or Mantanas Farm & Beach Resort) to Partas Terminal (Saoat)(9:42 AM - 9:48 AM)All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td>Poblacion Este</td>
+        <td></td>
+        <td></td>
+        <td>15-minute travel from  Resort\Accomodation (Aplaya de Isabel Resort or Mantanas Farm & Beach Resort) to Sta. Cruz Public Market(8:00 AM - 8:15 AM)All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Sta. Cruz Public Market</td>
+        <td>Buy affordable fresh meat and vegetables, snack, (8:16 AM - 9:16 AM)</td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Tagudin Public Market</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>30-minute travel from Sta. Cruz Public Market to Tagudin Sun Dial (Tagudin, Ilocos Sur)(9:17 AM - 9:47 AM)All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Tagudin Sun Dial(adjacent municipality going South)</td>
+        <td>15-minute sight seeing and photo opportunity(9:48 AM - 10:03 AM)</td>
+        <td>Tagudin Public Market</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>St. Augustine's Church</td>
+        <td>15-minute sight seeing and photo opportunity(10:04 AM - 10:19 AM)</td>
+        <td>Tagudin Public Market</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>Walking distance from Tagudin Sun Dial</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Tagudin Public Market</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>10-minute travel from St. Augustine's Church to Mt. Tabor View Deck and Chapel(10:20 AM - 10:30 AM)All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Mt. Tabor View Deck and Chapel</td>
+        <td>15-minute sight seeing and photo opportunity(10:31 AM - 10:46 AM)</td>
+        <td>Tagudin Public Market</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Tagudin Public Market</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>30-minute travel from Mt. Tabor View Deck and Chapel going back to Resort\Accomodation (Aplaya de Isabel Resort or Mantanas Farm & Beach Resort)(10:47 AM - 11:17 AM)All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Resort/ accommodation (Aplaya de Isabel Resort or Mantanas Farm and Beach Resort)</td>
+        <td>Gather belongings, check out(11:18 AM - 11:25 AM)</td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, resto bar, function hall, videoke</td>
+        <td>All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Travel time - if transporation is via Partas</td>
+        <td>End of Tour(9:49 AM)</td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, resto bar, function hall, videoke</td>
+        <td>6-minute travel from Resort\Accomodation (Aplaya de Isabel Resort or Mantanas Farm & Beach Resort) to Partas Terminal (Saoat)(11:26 AM - 11:32 AM)All types of land transportation</td>
+      </tr>
+    </tbody>
+  </table>
+</sectio>
+
+  <section id="pagna-pagna-section">
+  <h1 style="align-items:center; display: flex;">Pagna-Pagna<img src="assets/tricycle.png" alt="tricycle"><hr></h1>
+
+  <table class="circuit-table" id="itineraryTable">
+      <thead>
+        <tr>
+          <th>Circuit Components/Tourist Attractions</th>
+          <th>Possible Activities</th>
+          <th>Service Center</th>
+          <th>Enroute Facilities & Services</th>
+          <th>Frequency and Type of Transport Service</th>
+        </tr>
+      </thead>
+    <tbody>
+      <tr>
+        <td>Partas Terminal (Pick-up Point)(7:00 AM)</td>
+        <td></td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>3-minute travel time from pick up point (7:01 AM - 7:04 AM)All types of transportation</td>
+      </tr>
+      <tr>
+        <td>Resort/ accommodation (JJRome or Gallantel Resort)</td>
+        <td>Rest, breakfast(7:05 AM - 7:35 AM)</td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Poblacion Este</td>
+        <td></td>
+        <td>20-minute travel time from Accomodation to Kagutungan Falls(7:36 AM - 7:56 AM)motorcycle, PUV, jeepney, private car</td>
+      </tr>
+      <tr>
+        <td>Kagutungan Falls</td>
+        <td>Trekking, Sight-seeing, Swimming, Picnic</td>
+        <td>Poblacion Este</td>
+        <td>Function Hall, Cottages, Comfort Rooms, Piso Wifi </td>
+        <td>motorcycle, PUV, jeepney, private car</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Poblacion Este</td>
+        <td></td>
+        <td>18-minute travel from Kagutungan Falls to Accomodation(2:01 PM - 2:19 PM)motorcycle, PUV, jeepney, private car</td>
+      </tr>
+      <tr>
+        <td>Resort/ accommodation (JJRome or Gallantel Resort)</td>
+        <td>Rest, Freshen Up(2:20 PM - 3:20 PM)</td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>All types of land transportation</td>
+      </tr>
+      <tr>
+        <td>Service Center (Pick-up Point)</td>
+        <td>Photo opportunity in front of the Sta. Cruz Public MarketBuy necessities in nearby Convenience Store/ Groceries</td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>All types of transportation(3:21 PM - 4:00 PM)</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Poblacion Este</td>
+        <td></td>
+        <td>20-minute travel from Service Center (Pick-up Point) to Daligan Greenhills(4:01 PM - 4:21 PM)All types of transportation</td>
+      </tr>
+      <tr>
+        <td>Daligan Greenhills(4:22 PM - 6:00 AM)</td>
+        <td>Sight-seeing, picnic, camping, bonfire at night</td>
+        <td>Poblacion Este</td>
+        <td>Cottages, Comfort Rooms, Piso Wifi</td>
+        <td>motorcycle, PUV, jeepney, private car</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Poblacion Este</td>
+        <td></td>
+        <td>10-minute travel from Daligan Greenhills to Sevilla Beach(6:00 AM - 6:10 AM)All types of transportation</td>
+      </tr>
+      <tr>
+        <td>Sevilla Beach</td>
+        <td>Swimming, sight-seeing, walking, beachcombing, sunbathing, picnic, play beach games, bird watching, surfing, aqua trike. (6:00 AM - 6:10 AM)</td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, gasoline station, restaurants, car wash station, transport hub, grocery stores</td>
+        <td>All types of transportation</td>
+      </tr>
+      <tr>
+        <td>Sea Escape</td>
+        <td>Breakfast, Change ClothesBeach sight-seeing, picturetaking(8:01 AM - 9:00 AM)</td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, gasoline station, restaurants, car wash station, transport hub, grocery stores</td>
+        <td>All types of transportation</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Poblacion Este</td>
+        <td></td>
+        <td>5-minute travel from Sea Escape to Tuna Empanada Making(9:01 AM - 9:06 AM)All types of transportation</td>
+      </tr>
+      <tr>
+        <td>Tuna Empanada Making</td>
+        <td>-Lecture & Demonstration(2 hrs)-Product/food tasting-Buy pasalubong(9:06 AM - 11:06 AM)</td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, gasoline station, restaurants, car wash station, transport hub, grocery stores</td>
+        <td>All types of transportation</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Poblacion Este</td>
+        <td></td>
+        <td>5-minute travel from Tuna Empanada Making to Sagat Eatery(11:07 AM - 11:12 AM)All types of transportation</td>
+      </tr>
+      <tr>
+        <td>Sagat Eatery (Lunch)</td>
+        <td>Taste and explore ilocano dishes(11:13 AM - 12:13 PM)</td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, gasoline station, restaurants, car wash station, transport hub, grocery stores</td>
+        <td>All types of transportation</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Poblacion Este</td>
+        <td></td>
+        <td>3-minute travel from Sagat Eatery to Alpha Molave Firing Range(12:14 AM - 12:17 PM)All types of transportation</td>
+      </tr>
+      <tr>
+        <td>Alpha Molave Firing Range</td>
+        <td>Shooting/firing(12:18 PM - 1:48 PM)</td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, gasoline station, restaurants, car wash station, transport hub, grocery stores</td>
+        <td>All types of transportation</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Poblacion Este</td>
+        <td></td>
+        <td>5-minute travel from Alpha Molave Firing Range to Guandong Paper Factory(1:49 PM - 1:54 PM)All types of transportation</td>
+      </tr>
+      <tr>
+        <td>Guandong PaperFactory</td>
+        <td>Walking through the factory,photo opportunity, buy products(1:55 PM - 2:25 PM)</td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>All types of transportation</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Poblacion Este</td>
+        <td></td>
+        <td>5-minute travel from  Guandong Paper Factory to Sta. Cruz Public Market(2:26 PM - 2:29 PM)All types of transportation</td>
+      </tr>
+      <tr>
+        <td>Sta. Cruz Public Market</td>
+        <td>-Eat snacks-Buy necessities inConvenience Store/ Groceries(2:30 PM - 2:45 PM)</td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>All types of transportation</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Poblacion Este</td>
+        <td></td>
+        <td>5-minute travel from Sta. Cruz Public Market to Las-ud Mangrove Farm to Villa Hermosa Mangrove Farm(2:46 PM - 2:51 PM)All types of transportation</td>
+      </tr>
+      <tr>
+        <td>Las-ud Mangrove Farm to Villa Hermosa Mangrove Farm</td>
+        <td>Sight-seeing, photoghraphy, bird watching, fishing, kayaking(2:51 PM - 4:21 PM)</td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, gasoline station, restaurants, transport hub, car wash station</td>
+        <td>motorcycle, PUV, jeepney,private car</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Poblacion Este</td>
+        <td></td>
+        <td>5-minute travel from  Las-ud Mangrove Farm to Villa Hermosa Mangrove Farm to Shrimp Farm(4:21 PM - 4:24 PM)All types of transportation</td>
+      </tr>
+      <tr>
+        <td>Shrimp Farm Tour</td>
+        <td>Sight-seeing, picture taking,buy shrimp(4:25 PM - 4:40 PM)</td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, gasoline station, restaurants, transport hub, car wash station</td>
+        <td>motorcycle, PUV, jeepney, private car</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Poblacion Este</td>
+        <td></td>
+        <td>5-minute travel from Shrimp Farm to Vegetable Picking(4:41 PM - 4:43 PM)All types of transportation</td>
+      </tr>
+            <tr>
+        <td>Vegetable Picking(Brgy. Villa Hermosa, Sitio Pantar)</td>
+        <td>Vegetable picking, picturetaking, buy fresh pick/harvest vegetables(4:43 PM - 5:13 PM)</td>
+        <td>Poblacion Este</td>
+        <td>Restaurants/eatery</td>
+        <td>motorcycle, PUV, jeepney, private car</td>
+      </tr>
+      <tr>
+        <td>Resort/ accommodation (JJRome or Gallantel Resort)(Pick-up point)</td>
+        <td>Rest/ freshen up(5:13 PM - 5:57 PM)</td>
+        <td>Poblacion Este</td>
+        <td>Accomodation, gasoline station, ATM machines, bank, restaurants, money remittances, clinic, spa and wellness, transport hub, pharmacies, grocery stores, 24I7convenience store, police station, municipal hall</td>
+        <td>All types of transportation</td>
+      </tr>
+      <tr>
+        <td>Travel Time</td>
+        <td></td>
+        <td>Poblacion Este</td>
+        <td></td>
+        <td>3-minute travel from  resort/accommodation (JJRome of Gallantel Resort) to Partas Terminal(5:57 PM - 6:00 PM)All types of transportation</td>
+      </tr>
+    </tbody>
+  </section>
+  </table>
+</section>
+
+<script>
+  function toggleMenu() {
+    document.querySelector(".navbar").classList.toggle("active");
+  }
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("searchInput");
+
+    searchInput.addEventListener("input", function () {
+      const search = this.value.toLowerCase();
+      const rows = document.querySelectorAll("#itineraryTable tbody tr");
+
+      rows.forEach(row => {
+        const rowText = row.innerText.toLowerCase();
+        row.style.display = rowText.includes(search) ? "" : "none";
+      });
+    });
+  });
+
+</script>
+
+</body>
+</html>

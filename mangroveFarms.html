@@ -3,37 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Waterfalls - Santa Cruz</title>
+  <title>Mangrove Farms - Santa Cruz</title>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/placestogo.css">
 </head>
 <body>
 
-  <!-- Navbar -->
-  <header class="main-header">
-    <div class="logo">
-      <img style="width:15vw; height:10vh;" src="assets/fMarchLogo.png" alt="Logo 1">
-      <img src="assets/staCruzLogo.png" alt="Logo 2">
+<!-- Navbar -->
+<header class="main-header" style="background-image:url(assets/mainHeaderBg1.png); background-repeat:no-repeat; background-size: cover;">
+  <div class="logo">
+    <img class="logo1" style="width:8vw; height:10vh;" src="assets/fMarchLogo.png" alt="Logo 1">
+    <img class="logo2" src="assets/staCruzLogo.png" alt="Logo 2">
+  </div>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+  
+    <div class="dropdown">
+      <a href="#"><u>Attractions</u></a>
+      <div class="dropdown-content">
+  
+        <!-- Nested Dropdown: Potential -->
+        <div class="dropdown-sub">
+          <a href="#">Potential Tourist Spots ▸</a>
+          <div class="dropdown-sub-content">
+            <a href="beaches.html">Beaches</a>
+            <a href="greenhills.html">Greenhills</a>
+            <a href="mangroveFarms.html"><u>Mangrove Farms</u></a>
+            <a href="scmunicipalHall.html">Municipal Hall</a>
+          </div>
+        </div>
+  
+        <!-- Nested Dropdown: Emerging -->
+        <div class="dropdown-sub">
+          <a href="#">Emerging Tourist Spots ▸</a>
+          <div class="dropdown-sub-content">
+            <a href="churches.html">Churches</a>
+            <a href="waterfalls.html">Waterfalls</a>
+            <a style="padding-bottom:100px;"  href="historicalPlace.html">Historical Tourism</a>
+          </div>
+        </div>
+  
+      </div>
     </div>
-    <nav class="navbar">
-      <a href="index.html">HOME</a>
-      <a href="churches.html">CHURCHES</a>
-      <a href="waterfalls.html">FALLS</a>
-      <a href="mangroveFarms.html"><u>MANGROVE</u></a>
-      <a href="beaches.html">BEACH</a>
-      <a href="greenhills.html">GREENHILLS</a>
-    </nav>
-  </header>
+    <a href="townProducts.html">Town Products</a>
+    <a href="hotelAndResorts.html">Hotel & Resorts</a>
+    <a href="restaurants.html">Restaurants</a>
+    <a href="tourismCircuit.html" class="active">Daytrips</a>
+    <a href="index.html#about-footer">About Us</a>
+  </nav>
+  
+</header>
 
   <section class="hero" style="background: url('assets/heromangrove.jpg') no-repeat center center / cover;">
     <div class="hero-content">
       <div class="hero-text">
         <h1 id="main-title">Mangroves</h1>
         <p id="main-description" class="descriptions">
-          The second southernmost town of the province of Laguna and in the Philippines, Santa Cruz has a diverse, beautiful past. It is known as the strong Spanish colonial practice...
+          The lush, mangrove farms located in sitio Pantar, barangay Villa Hermosa and barangay Las-ud cover an area of almost two hectares and 3.72 hectares, respecively. FEd by buaya River and the irrigation system of barangay Quinsoriano, they are home to a number of marine lives like tilapia, bangus(milkfish), malaga(siganid),kapiged(siganid), barangen (siganid), swordfish, oyster , pawn shrimp , crab, clam and sea grass. The mangrove projects were initiated by the Local Government Unit of Sta. Cruz in 2013 with the effort and cooperation of barangay and support from the bureau of Fisheries and Aquatic Resources (BFAR) and the Tan Yan Kee Foundation.  
         </p>
-        <button class="read-more">Google View</button>
-        <button class="view-more">View More</button>
+        <div class="btns">
+          <button class="read-more">Google View</button>
+          <button class="view-more">View More</button>
+          </div>
       </div>
       <img src="assets/heromangrove.jpg" alt="Nature Main" style="height:350px;" class="main-img" id="main-image" />
     </div>
@@ -45,22 +77,12 @@
 
       <div onclick="changeMainContent(0)">
         <img src="assets/m1.jpg" alt="churches 1" />
-        <h1>Mangroves</h1>
+        <h1>Las-Ud</h1>
       </div>
 
       <div onclick="changeMainContent(1)">
         <img src="assets/m2.jpg" alt="churches 2" />
-        <h1>Mangroves</h1>
-      </div>
-
-      <div onclick="changeMainContent(2)">
-        <img src="assets/m3.jpg" alt="Waterfall 3" />
-        <h1>Mangroves</h1>
-      </div>
-
-      <div onclick="changeMainContent(3)">
-        <img src="assets/m4.jpg" alt="Main Falls" />
-        <h1>Mangroves</h1>
+        <h1>Villa Hermosa</h1>
       </div>
 
     </div>
@@ -91,14 +113,9 @@
     <div style="width:17vh;" onclick="changeMainContent(1)">
       <a href="https://www.google.com/maps/dir/Sta.+Cruz+Public+Market,+3FJ4%2BHHR,+National+Highway,+Santa+Cruz,+Ilocos+Sur/PANTAR+MANGROVE+FOREST,+3CRR%2B353,+Unnamed+Road,+Santa+Cruz,+Ilocos+Sur/@17.0904881,120.4396071,15z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x338e1e8ae26c3c85:0x7dcdfc81a12c78db!2m2!1d120.4571499!2d17.0812035!1m5!1m1!1s0x338e1fd0b6f17073:0x6e18019f698700f9!2m2!1d120.4404364!2d17.0901413!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D" target="_blank">
         <img src="assets/staCruzMap.PNG" style="  width: 100%; height: 120px; object-fit: contain; border-bottom: 1px solid #ddd;" alt="churches 2" />
-        <h1>Pantar</h1>
+        <h1>VIlla Hermosa, Sitio Pantar</h1>
       </a>
     </div>
-    <div style="width:17vh;" onclick="changeMainContent(2)">
-      <a href="https://www.google.com/maps/dir/Sta.+Cruz+Public+Market,+3FJ4%2BHHR,+National+Highway,+Santa+Cruz,+Ilocos+Sur/Villa+Hermosa,+Santa+Cruz,+Ilocos+Sur/@17.0904881,120.4415827,15z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x338e1e8ae26c3c85:0x7dcdfc81a12c78db!2m2!1d120.4571499!2d17.0812035!1m5!1m1!1s0x338e1e84e0966677:0x4241181121a13a31!2m2!1d120.4444046!2d17.0935319!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D" target="_blank">
-        <img src="assets/villaHMM.PNG" style="  width: 100%; height: 120px; object-fit: contain; border-bottom: 1px solid #ddd;" alt="churches 3" />
-        <h1>Villa Hermosa</h1>
-      </a>
     </div>
 
   </div>
@@ -114,38 +131,26 @@
     <span class="close-viewmore">&times;</span>
     <h2 >Learn More About The Mangroves Of Sta. Cruz</h2>
     <p>
-      The mangrove Farms are developing tourist spots that are hidden in the suburbs of the municipality of Sta. Cruz Ilocos Sur. Those mangroves are not only design to attract tourist but also create green barrier for the people around those mangroves. 
+        Roads leading to the farms are concreted except for the five-minute (approximately) trek which would require tourist to walk on foot on dirt paths. It is accessible to tricycles and private vehiclces.
+        There are no facilities yet on the farms because the properties sorrounding them are privately owned. LGU Sta. Cruz included PPA's for the improvement of emerging and potential tourism sites in the Executive - Legislative Agenda 2022-2024 including the two mangrove farms. 
     </p>
-    <ul>
-      <li><strong>Las-Ud</strong>: Replica of Mexico’s basilica, with stunning stained glass and retablo.</li>
-      <li><strong>Pantar</strong>: A peaceful site, deeply rooted in local devotion.</li>
-      <li><strong>Villa Hermosa</strong>: A historical monument constructed during the Spanish era.</li>
-      <li><strong>Our Lady Of Mt. Carmel</strong>: Known for its charm and regular pilgrimages.</li>
-    </ul>
   </div>
 </div>
 
   
   <script>
     const titles = [
-      "Mangroves Farms",
-      "Mangroves Farms",
-      "Mangroves Farms",
-      "Mangroves Farms"
+      "The Mangroves of Las-ud",
+      "The Mangroves of Villa Hermosa(Sitio Pantar)"
     ];
 
     const descriptions = [
       "The lush, mangrove farm located in Sitio Pantar, Villa Hermosa, Sta. Cruz, Ilocos Sur covers an area of almost two hectares. Fed by the Buaya River and the irrigartion system of barangay Quinsoriano, it is home to a number of marine life like tilapia, bangus (milkfish), mala-ga (siganid), kapiged (siganid), barangen (siganid), swordfish, oyster, prawn, shrimp, crab, clam and sea grass.",
-      "The lush, mangrove farm located in Sitio Pantar, Villa Hermosa, Sta. Cruz, Ilocos Sur covers an area of almost two hectares. Fed by the Buaya River and the irrigartion system of barangay Quinsoriano, it is home to a number of marine life like tilapia, bangus (milkfish), mala-ga (siganid), kapiged (siganid), barangen (siganid), swordfish, oyster, prawn, shrimp, crab, clam and sea grass.",
-      "The lush, mangrove farm located in Sitio Pantar, Villa Hermosa, Sta. Cruz, Ilocos Sur covers an area of almost two hectares. Fed by the Buaya River and the irrigartion system of barangay Quinsoriano, it is home to a number of marine life like tilapia, bangus (milkfish), mala-ga (siganid), kapiged (siganid), barangen (siganid), swordfish, oyster, prawn, shrimp, crab, clam and sea grass.",
-      "The lush, mangrove farm located in Sitio Pantar, Villa Hermosa, Sta. Cruz, Ilocos Sur covers an area of almost two hectares. Fed by the Buaya River and the irrigartion system of barangay Quinsoriano, it is home to a number of marine life like tilapia, bangus (milkfish), mala-ga (siganid), kapiged (siganid), barangen (siganid), swordfish, oyster, prawn, shrimp, crab, clam and sea grass."
-    ];
+      "The lush, mangrove farm located in Sitio Pantar, Villa Hermosa, Sta. Cruz, Ilocos Sur covers an area of almost two hectares. Fed by the Buaya River and the irrigartion system of barangay Quinsoriano, it is home to a number of marine life like tilapia, bangus (milkfish), mala-ga (siganid), kapiged (siganid), barangen (siganid), swordfish, oyster, prawn, shrimp, crab, clam and sea grass."    ];
 
     const images = [
       "assets/m1.jpg",
-      "assets/m2.jpg",
-      "assets/m3.jpg",
-      "assets/m4.jpg"
+      "assets/m2.jpg"
     ];
 
     function changeMainContent(index) {
@@ -192,6 +197,9 @@
     }
   });
 
+  function toggleMenu() {
+  document.querySelector(".navbar").classList.toggle("active");
+}
   </script>
 
 </body>

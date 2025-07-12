@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel & Resorts</title>
+  <link rel="stylesheet" href="css/hotelResto.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    /* Popup Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1001;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .modal-content img {
+      width: 300px;
+      max-width: 90%;
+      height: auto;
+      border: 2px solid white;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .modal-content img:hover {
+      transform: scale(1.05);
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      .modal-content img {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="main-header" style="background-image:url(assets/mainHeaderBg1.png); background-repeat:no-repeat; background-size: cover;">
+    <div class="logo">
+      <img class="logo1" style="width:8vw; height:10vh;" src="assets/fMarchLogo.png" alt="Logo 1">
+      <img class="logo2" src="assets/staCruzLogo.png" alt="Logo 2">
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+    
+      <div class="dropdown">
+        <a href="#">Attractions</a>
+        <div class="dropdown-content">
+    
+          <!-- Nested Dropdown: Potential -->
+          <div class="dropdown-sub">
+            <a href="#">Potential Tourist Spots ▸</a>
+            <div class="dropdown-sub-content">
+              <a href="beaches.html">Beaches</a>
+              <a href="greenhills.html">Greenhills</a>
+              <a href="mangroveFarms.html">Mangrove Farms</a>
+              <a href="scmunicipalHall.html">Municipal Hall</a>
+            </div>
+          </div>
+    
+          <!-- Nested Dropdown: Emerging -->
+          <div class="dropdown-sub">
+            <a href="#">Emerging Tourist Spots ▸</a>
+            <div class="dropdown-sub-content">
+              <a href="churches.html">Churches</a>
+              <a href="waterfalls.html">Waterfalls</a>
+              <a style="padding-bottom:100px;"  href="historicalPlace.html">Historical Tourism</a>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+      <a href="townProducts.html">Town Products</a>
+      <a href="hotelAndResorts.html">Hotel & Resorts</a>
+      <a href="restaurants.html"><u>Restaurants</u></a>
+      <a href="tourismCircuit.html" class="active">Daytrips</a>
+      <a href="index.html#about-footer">About Us</a>
+    </nav>
+    
+  </header>
+
+  <section class="highlight-section">
+    <h2>Discover Santa Cruz in its outstanding Restaurants</h2>
+    <p>Our town is welcome to serve you a tasty and wonderful dishes that were plucked from different places from our very own products.</p>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- SEARCH -->
+    <div class="search-container">
+      <input type="text" placeholder="Find Accommodations..." id="searchInput">
+      <i class="fas fa-search"></i>
+    </div>
+
+    <!-- HOTEL CARDS GRID -->
+    <div class="hotel-wrapper">
+      <div class="hotel-card">
+        <div class="hotel-image"><img class="hotelImages" src="assets/mantanasFarmAndResort.jpg" alt=""></div>
+        <div class="hotel-info">
+          <h2>Aplaya De Isabelle Resorts</h2>
+          <p><strong>📍 Mambog, Sta. Cruz, Ilocos Sur</strong></p>
+          <p><i class="fa-solid fa-phone"></i> 9690106368</p>
+          <div class="hotel-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fas fa-times"></i>
+            <i class="fab fa-instagram"></i>
+          </div>
+          <button onclick="openModal('resort1')">More Images</button>
+        </div>
+      </div>
+
+      <div class="hotel-card">
+        <div class="hotel-image"><img class="hotelImages" src="assets/mantanasFarmAndResort.jpg" alt=""></div>
+        <div class="hotel-info">
+          <h2>Mantanas Farm Resort/Inn</h2>
+          <p><strong>📍 Mambog, Sta. Cruz, Ilocos Sur</strong></p>
+          <p><i class="fa-solid fa-phone"></i> 9959244707</p>
+          <div class="hotel-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fas fa-times"></i>
+            <i class="fab fa-instagram"></i>
+          </div>
+          <button onclick="openModal('resort2')">More Images</button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="hotel-card">
+        <div class="hotel-image"><img class="hotelImages" src="assets/mantanasFarmAndResort.jpg" alt=""></div>
+        <div class="hotel-info">
+          <h2>Gallantel Resort/Inn</h2>
+          <p><strong>📍 Mambog, Sta. Cruz, Ilocos Sur</strong></p>
+          <p><i class="fa-solid fa-phone"></i> 9399052458</p>
+          <div class="hotel-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fas fa-times"></i>
+            <i class="fab fa-instagram"></i>
+          </div>
+          <button onclick="openModal('resort3')">More Images</button>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="hotel-card">
+        <div class="hotel-image"><img class="hotelImages" src="assets/mantanasFarmAndResort.jpg" alt=""></div>
+        <div class="hotel-info">
+          <h2>Jjrome Traveller's Inn</h2>
+          <p><strong>📍 Mambog, Sta. Cruz, Ilocos Sur</strong></p>
+          <p><i class="fa-solid fa-phone"></i> 9814502606</p>
+          <div class="hotel-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fas fa-times"></i>
+            <i class="fab fa-instagram"></i>
+          </div>
+          <button onclick="openModal('resort4')">More Images</button>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="hotel-card">
+        <div class="hotel-image"><img class="hotelImages" src="assets/mantanasFarmAndResort.jpg" alt=""></div>
+        <div class="hotel-info">
+          <h2>Alhayat Black Bay Beach Resort</h2>
+          <p><strong>📍 Mambog, Sta. Cruz, Ilocos Sur</strong></p>
+          <p><i class="fa-solid fa-phone"></i> 9091704260</p>
+          <div class="hotel-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fas fa-times"></i>
+            <i class="fab fa-instagram"></i>
+          </div>
+          <button onclick="openModal('resort5')">More Images</button>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="hotel-card">
+        <div class="hotel-image"><img class="hotelImages" src="assets/mantanasFarmAndResort.jpg" alt=""></div>
+        <div class="hotel-info">
+          <h2>Kabaro Traveller's Inn</h2>
+          <p><strong>📍 Mambog, Sta. Cruz, Ilocos Sur</strong></p>
+          <p><i class="fa-solid fa-phone"></i> 9157391658</p>
+          <div class="hotel-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fas fa-times"></i>
+            <i class="fab fa-instagram"></i>
+          </div>
+          <button onclick="openModal('resort6')">More Images</button>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="hotel-card">
+        <div class="hotel-image"><img class="hotelImages" src="assets/mantanasFarmAndResort.jpg" alt=""></div>
+        <div class="hotel-info">
+          <h2>D.S. Cabildo Resort</h2>
+          <p><strong>📍 Mambog, Sta. Cruz, Ilocos Sur</strong></p>
+          <p><i class="fa-solid fa-phone"></i> 9276377940</p>
+          <div class="hotel-icons">
+            <i class="fab fa-facebook"><link></link></i>
+            <i class="fas fa-times"></i>
+            <i class="fab fa-instagram"></i>
+          </div>
+          <button onclick="openModal('resort7')">More Images</button>
+        </div>
+      </div>
+  </main>
+
+  <!-- MODAL GALLERY -->
+  <div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-content" id="modalGallery">
+      <!-- Images will be loaded by JS -->
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    document.getElementById("searchInput").addEventListener("input", function () {
+      const search = this.value.toLowerCase();
+      const cards = document.querySelectorAll(".hotel-card");
+
+      cards.forEach(card => {
+        const title = card.querySelector("h2").innerText.toLowerCase();
+        card.style.display = title.includes(search) ? "flex" : "none";
+      });
+    });
+
+    function toggleMenu() {
+      document.querySelector('.navbar').classList.toggle('active');
+    }
+
+    function openModal(resortId) {
+      const modal = document.getElementById("imageModal");
+      const gallery = document.getElementById("modalGallery");
+      gallery.innerHTML = ''; // Clear existing images
+
+      const imageMap = {
+        resort1: [
+          'assets/mantanasFarmAndResort.jpg',
+          'assets/sample1.jpg',
+          'assets/sample2.jpg'
+        ],
+        resort2: [
+          'assets/sample3.jpg',
+          'assets/sample4.jpg',
+          'assets/sample5.jpg'
+        ],
+        resort3: [
+          'assets/sample3.jpg',
+          'assets/sample4.jpg',
+          'assets/sample5.jpg'
+        ],
+        resort4: [
+          'assets/sample3.jpg',
+          'assets/sample4.jpg',
+          'assets/sample5.jpg'
+        ],
+        resort5: [
+          'assets/sample3.jpg',
+          'assets/sample4.jpg',
+          'assets/sample5.jpg'
+        ],
+        resort6: [
+          'assets/sample3.jpg',
+          'assets/sample4.jpg',
+          'assets/sample5.jpg'
+        ],
+        resort7: [
+          'assets/sample3.jpg',
+          'assets/sample4.jpg',
+          'assets/sample5.jpg'
+        ],
+        resort8: [
+          'assets/sample3.jpg',
+          'assets/sample4.jpg',
+          'assets/sample5.jpg'
+        ],
+        // Add more image lists for other resorts
+      };
+
+      const images = imageMap[resortId] || [];
+      images.forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = "Resort Image";
+        gallery.appendChild(img);
+      });
+
+      modal.style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+  </script>
+</body>
+</html>
