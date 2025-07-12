@@ -1,0 +1,356 @@
+:root {
+  --primary-color: #164069;
+  --accent-color: #1e33ad;
+  --hover-color: rgb(223, 102, 102);
+  --button-hover-bg: rgb(10, 10, 112);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Oswald', sans-serif;
+  background: linear-gradient(to right, #48507a, #1d0783);
+  scroll-behavior: smooth;
+}
+
+/* HEADER */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+  background: var(--primary-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.logo img {
+  height: 10vh;
+  width: 10vh;
+  margin-right: 10px;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: var(--hover-color);
+}
+/* TOGGLE BUTTON */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* PAGE TITLE */
+.page-title {
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 30px 40px;
+  color: white;
+}
+
+/* SEARCH BAR */
+.search-container {
+  display: flex;
+  margin:10px;
+  align-items: center;
+  background: #eee;
+  padding: 8px 14px;
+  border-radius: 25px;
+  justify-content: center;
+  width: 20vw;
+}
+
+.search-container input {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 5px;
+  width: 200px;
+  font-size: 1em;
+}
+@media(max-width: 525px){
+  .search-container {
+    display: flex;
+    align-items: center;
+    background: #eee;
+    padding: 6px 14px;
+    border-radius: 25px;
+    justify-content: center;
+    width: 50vw;
+  }
+  
+  .search-container input {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 5px;
+    max-width:150px;
+    font-size: 9px !important;
+  }
+}
+
+.search-container i {
+  margin-left:5px;
+  color: #111;
+}
+
+/* HOTEL GRID */
+.hotel-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  padding: 0 40px;
+}
+
+.hotel-card {
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(5px);
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.hotel-card:hover {
+  transform: scale(1.02);
+}
+
+.hotel-image {
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  width: auto;
+}
+
+.hotelImages {
+  width: 20vw;
+  height: fit-content;
+  background-size: contain;
+  border-radius: 10px;
+}
+
+/* HOTEL INFO */
+.hotel-info{
+  text-align: center;
+  justify-content: center;
+  align-items:center;
+}
+.hotel-info h2 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.hotel-info p {
+  margin: 2px 0;
+  font-size: 0.95rem;
+}
+
+.hotel-icons {
+  margin: 10px 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 10px;
+}
+
+.hotel-icons i {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.hotel-icons i:hover {
+  color: #f0f;
+}
+
+/* BUTTONS */
+button {
+  padding: 6px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg);
+  color: white;
+}
+
+/* DROPDOWNS */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content{  
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 220px;
+  z-index: 1;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a,
+.dropdown-sub a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dropdown-content a:hover,
+.dropdown-sub-content a:hover {
+  background-color: #eee;
+}
+
+.dropdown-sub {
+  position: relative;
+}
+
+.dropdown-sub-content {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  background-color: white;
+  min-width: 200px;
+  z-index: 1;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.dropdown-sub:hover .dropdown-sub-content {
+  display: block;
+}
+
+/* RESPONSIVE QUERIES */
+
+/* Mobile: logo, icons, layout tweaks */
+@media (max-width: 400px) {
+  .logo img {
+    width: 15vw !important;
+    height: 6vh !important;
+  }
+
+  .page-title {
+    font-size: 1.2rem !important;
+    font-weight: 900;
+  }
+
+  .hotelImages {
+    width: 40vw;
+    height: 20vh;
+  }
+
+  .hotel-icons {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hotel-wrapper {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+
+  .hotel-card {
+    text-align: center;
+    align-items: center;
+  }
+}
+
+/* Tablet: stack navbar */
+@media (max-width: 1060px) {
+  .navbar {
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 60%;
+    background-color: var(--primary-color);
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 1001;
+    display: none;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+/*hero sec*/
+.highlight-section {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(to right, #1e33ad, #2196f3);
+  color: white;
+}
+.highlight-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.highlight-section p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: auto;
+}
+@media(max-width: 400px){
+  .highlight-section h2{
+    font-size:1rem;
+  }
+  .highlight-section p{
+    font-size:.9rem;
+  }
+}
+@media(max-width: 300px){
+  .highlight-section h2{
+    font-size:1.2rem;
+  }
+  .highlight-section p{
+    font-size:.5rem;
+  }
+}
+.modal img {
+  width: 250px;
+  border: 2px solid white;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+.modal img:hover {
+  transform: scale(1.05);
+}

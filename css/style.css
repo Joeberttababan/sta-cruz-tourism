@@ -1,3 +1,15 @@
+:root {
+  --primary-color: #1e33ad;
+  --accent-color: #2196f3;
+  --text-light: #ffffff;
+  --danger-color: red;
+  --header-color: linear(to right, blue, red, white);
+  --text-dark: #333;
+  --card-bg: #000000;
+  --hover-glow: rgba(255, 255, 255, 0.15);
+  --hero-overlay: rgba(0, 0, 0, 0.5);
+}
+
 /* Reset and base styles */
 * {
   margin: 0;
@@ -6,8 +18,9 @@
   font-family: 'Oswald', sans-serif;
 }
 
-body {
-  font-family: 'Segoe UI', sans-serif;
+html, body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
   background-color: #f4f4f4;
 }
 
@@ -22,62 +35,217 @@ body {
 }
 
 /* Header */
-.main-header {   
-  display: flex;   
-  justify-content: space-between;   
-  align-items: center;   
-  background: #230f7a;   
-  color: white;   padding: 10px 40px; 
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 20px;
   position: sticky;
   top: 0;
-  z-index: 1000; /* Make sure it's above everything else */
-  background: #1e33ad; /* Re-apply background in case it overlaps */
-}  
-   
- .logo {
+  z-index: 1000;
+  background: url('../assets/mainHeaderBg1.png') no-repeat center center / cover;
+}
+
+.logo {
   display: flex;
-  align-items: center; /* vertically center the items */
+  align-items: center;
 }
 
 .logo img {
-  width:50px; 
-  height:50px;
+  height: 8vh;
+  width: auto;
   margin-right: 10px;
 }
 
-/* Navbar */
+@media(max-width: 894px) {
+  .logo1 {
+    height: 5vh !important;
+    width: 15vw !important;
+  }
+  .logo2 {
+    height: 5vh !important;
+    width: 10vw !important;
+  }
+}
+
+/* Navbar and Toggle */
+.navbar {
+  display: flex;
+  gap: 20px;
+  align-items: left;
+}
 
 .navbar a {
-  opacity:1;
-  color: white;
+  color: var(--text-light);
+  font-weight: 600;
   text-decoration: none;
-  margin: 0 10px;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  transition: 0.3s;
 }
 
 .navbar a:hover {
-  color: #f2b705;
+  color: #ffd700;
+  text-shadow: 0 0 5px var(--hover-glow);
+}
+/*burger*/
+.menu-toggle {
+  margin-left: 120px; 
+}
+@media(max-width: 603px){
+  .menu-toggle{
+    margin-left:300px;
+  }
+}
+@media(max-width: 555px){
+  .menu-toggle{
+    margin-left:200px;
+  }
+}
+@media(max-width: 455px){
+  .menu-toggle{
+    margin-left:150px;
+  }
+}
+@media(max-width: 402px){
+  .menu-toggle{
+    margin-left:80px;
+  }
+}
+@media(max-width: 286px){
+  .menu-toggle{
+    margin-left:50px;
+  }
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 220px;
+  z-index: 1;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #eee;
+}
+
+/* Nested Dropdown */
+.dropdown-sub {
+  position: relative;
+  margin-bottom:10px
+}
+
+.dropdown-sub-content {
+  display: none;
+  position: absolute;
+  margin-left: 200px;
+  top: 50%;
+  left: 20rem;
+  background-color: white;
+  min-width: 200px;
+  z-index: 1;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-sub:hover .dropdown-sub-content {
+  display: block;
+}
+
+.dropdown-sub a {
+  padding: 10px 15px;
+  white-space: nowrap;
+}
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+/* Responsive Navbar */
+@media (max-width: 800px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar {
+    flex-direction: column;
+    background-color: var(--primary-color);
+    position: absolute;
+    right: 0;
+    top: 80%;
+    width: 100%;
+    display: none;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .navbar a {
+    padding: 8px 12px;
+    width: 50%;
+    text-align: left;
+  }
+
+  .dropdown-content,
+  .dropdown-sub-content {
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+    min-width: 100%;
+  }
+
+  .dropdown-content a,
+  .dropdown-sub-content a {
+    color: white;
+    padding-left: 20px;
+  }
+
+  .dropdown-content a:hover,
+  .dropdown-sub-content a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .dropdown:hover .dropdown-content,
+  .dropdown-sub:hover .dropdown-sub-content {
+    display: block;
+  }
 }
 
 /* Hero Section */
 .hero {
-  background: url('assets/municipalHall.jpeg') no-repeat center center / cover;
+  background: url('css/assets/mhall.jpg') no-repeat center center / cover;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
   padding-left: 6vw;
   position: relative;
   color: white;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
-
 }
 
 
 .hero-text {
   position: relative;
-  color:rgb(255, 255, 255);
   z-index: 1;
   max-width: 90%;
   padding: 1rem;
@@ -86,28 +254,49 @@ body {
 .hero-text h1,
 h1 {
   font-family: "Protest Strike", sans-serif;
-  font-size: 6vw;
+  font-size: 72px;
   font-weight: bold;
   margin-bottom: 1vh;
-  line-height: 1.1;
-  color: #ffd900;
+  text-shadow: 10px 10px 20px black;
 }
 
-.hero-text p,
+
 .hero-text h2 {
-  font-family: century 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 30px;
+
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-weight: 400;
-  margin-top: 0.5vh;
 }
 
 .hero-text p {
-  font-family: century 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 30px;
-  font-weight: 400;
+  font-family:Arial, Helvetica, sans-serif;
+  font-style: italic;
+  text-shadow:10px 10px 20px rgb(233, 82, 82);
+  font-size: 15px;
+  font-weight: 100;
   margin-top: 0.5vh;
 }
-/* Right theme text */
+@media(max-width: 400px){
+  .hero-text h1, h1{
+    font-size: 40px !important;
+  }
+  .hero-text h2 {
+    font-size:20px !important;
+    font-family: "oswald";
+    font-weight: 400;
+  }
+
+  .hero-text p {
+    font-size: 10px;
+    text-shadow:10px 10px 20px  rgb(233, 82, 82);
+  }
+  .hero {
+    background: url('css/assets/mhall.jpg') no-repeat center center / contain;
+    align-items:flex-start;
+    left:0;
+    height: 50vh;
+  }
+}
+
 #theme {
   position: absolute;
   top: 50%;
@@ -127,18 +316,23 @@ h1 {
 /* Places Section */
 .places-wrapper {
   background: url('assets/exploreNow.jpg') no-repeat center center / cover;
-  height: 110vh;
+  height:110vh;
   padding: 40px 20px;
 }
 
-/* Scrollable Slider Container */
+@media (max-width: 400px) {
+  .places-wrapper {
+    max-height: 100vh;
+    min-height:50vh;
+  }
+}
+
 .slider-container {
   overflow-x: auto;
   scroll-behavior: smooth;
   padding: 10px 0;
 }
 
-/* Places Slider Styles */
 .places-slider {
   display: flex;
   gap: 20px;
@@ -148,35 +342,27 @@ h1 {
   padding-bottom: 20px;
   position: relative;
   overflow-x: auto;
-  scroll-behavior: smooth;
 }
 
-/* Hide scrollbar but keep scroll functionality */
 .places-slider::-webkit-scrollbar {
   display: none;
 }
 
 .places-slider {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* Individual Cards (4 visible on desktop) */
 .place-card {
   flex: 0 0 auto;
   width: 22vw;
-  height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   background: white;
-  color: #333;
-  text-align: center;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, width 0.3s ease;
-  position: relative;
+  transition: transform 0.3s ease;
 }
 
 .place-card img {
@@ -184,33 +370,29 @@ h1 {
   height: 170px;
   object-fit: cover;
   border-radius: 12px 12px 0 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 
 .place-card h3 {
   background-color: #0e2e4e;
+  text-align: center;
   color: white;
   padding: 5px 0;
 }
 
-/* Responsive Caption Text */
 .place-card p {
-  font-size: 0.9vw;
+  font-size: 15px;
   padding: 5px 8px;
-  font-size:15px;
   margin: 0;
-  color: #000000;
-  line-height: 1.3;
+  color: #000;
 }
 
-/* Active card on click */
 .place-card.active {
   width: 300px;
   transform: scale(1.1);
   z-index: 1;
 }
 
-/* On hover */
 .place-card:hover {
   transform: scale(1.05);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
@@ -221,7 +403,6 @@ h1 {
   background-color: #1e2a38;
   color: #f1f1f1;
   padding: 40px 20px 20px;
-  font-family: 'Oswald', sans-serif;
 }
 
 .footer-container {
@@ -257,65 +438,48 @@ h1 {
   color: #ccc;
 }
 
-/* Responsive adjustments */
+/* Responsive Cards */
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
     align-items: flex-start;
   }
-
-  .footer-section {
-    width: 100%;
-  }
-}
-
-
-strong{
-  font-size:larger;
-}
-
-/* Optional hidden cards if needed */
-#imaginary-cards {
-  opacity: 0;
-}
-
-/* Tablet View (2 cards visible) */
-@media (max-width: 768px) {
   .place-card {
     width: 45vw;
   }
-
   .place-card img {
     height: 160px;
   }
-
   .place-card p {
     font-size: 13px;
   }
 }
 
-/* Mobile View (1.5–2 cards visible) */
 @media (max-width: 480px) {
   .places-slider {
     justify-content: flex-start;
   }
-
   .place-card {
     width: 60vw;
   }
-
   .place-card img {
     height: 150px;
   }
-
   .place-card p {
     font-size: 12px;
   }
 }
 
-/*html links*/
+strong {
+  font-size: larger;
+}
 
-.places{
-  text-decoration:none;
-  color:whitesmoke;
+/* Optional Hidden */
+#imaginary-cards {
+  opacity: 0;
+}
+
+.places {
+  text-decoration: none;
+  color: whitesmoke;
 }
