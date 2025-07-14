@@ -35,6 +35,11 @@ html, body {
 }
 
 
+.logo {
+  display: flex;
+  align-items: center;
+}
+
 .logo img {
   height: 8vh;
   width: auto;

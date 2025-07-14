@@ -49,8 +49,9 @@ html, body {
 }
 
 .navbar a:hover {
-  color: var(--hover-color);
+  color: #ffd700;
 }
+
 /* TOGGLE BUTTON */
 .menu-toggle {
   display: none;
